@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\EUnitType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,9 +12,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dict_services', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
 
-            $table->id('service_id')
+            $table->id()
                 ->comment('ID услуги');
 
             $table->unsignedBigInteger('category_id')
@@ -26,6 +27,18 @@ return new class extends Migration
                 ->nullable()
                 ->default(null)
                 ->comment('Описание услуги');
+
+            $table->float('price')
+                ->default(0)
+                ->comment('Стоимость услуги');
+
+            $table->unsignedTinyInteger('unit')
+                ->default(EUnitType::Item->value)
+                ->comment('Единица измерения');
+
+            $table->unsignedTinyInteger('from')
+                ->default(0)
+                ->comment('Метка стартовой цены');
 
             $table->unsignedTinyInteger('favorite')
                 ->default(0)
@@ -40,8 +53,8 @@ return new class extends Migration
             $table->comment('Перечень услуг');
 
             $table->foreign('category_id', 'category_id_service_id')
-                ->references('category_id')
-                ->on('dict_categories')
+                ->references('id')
+                ->on('categories')
                 ->onDelete('cascade');
         });
     }
@@ -51,7 +64,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('dict_services', function(Blueprint $table) {
+        Schema::table('services', function(Blueprint $table) {
             $table->dropForeign('category_id_service_id');
         });
 

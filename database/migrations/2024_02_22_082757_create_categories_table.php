@@ -11,10 +11,13 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('dict_categories', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
 
-            $table->id('category_id')
+            $table->id()
                 ->comment('ID категории');
+
+            $table->unsignedBigInteger('master_id')
+                ->comment('ID мастера');
 
             $table->string('title')
                 ->comment('Название категории');
@@ -31,6 +34,11 @@ return new class extends Migration {
             $table->timestamps();
 
             $table->comment('Категории услуг');
+
+            $table->foreign('master_id', 'master_id_category_id')
+                ->references('id')
+                ->on('masters')
+                ->onDelete('cascade');
         });
     }
 
@@ -39,6 +47,10 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('dict_categories');
+        Schema::table('categories', function(Blueprint $table) {
+            $table->dropForeign('master_id_category_id');
+        });
+
+        Schema::dropIfExists('categories');
     }
 };

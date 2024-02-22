@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Http\Traits\Filterable;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -12,9 +13,9 @@ class Category extends Authenticatable {
     use Filterable;
 
 
-    protected $table         = 'dict_categories';
+    protected $table         = 'categories';
 
-    protected $primaryKey    = 'category_id';
+    protected $primaryKey    = 'id';
 
     protected $keyType       = 'int';
 
@@ -24,11 +25,19 @@ class Category extends Authenticatable {
 
 
     /**
+     * @return BelongsTo
+     */
+    public function master(): BelongsTo
+    {
+        return $this->belongsTo(Master::class, 'master_id', 'id');
+    }
+
+    /**
      * @return HasMany
      */
     public function services(): HasMany
     {
-        return $this->hasMany(Service::class, 'category_id', 'category_id');
+        return $this->hasMany(Service::class, 'category_id', 'id');
     }
 
 
@@ -46,7 +55,7 @@ class Category extends Authenticatable {
     ];
 
     protected $fillable = [
-        'category_id', 'title', 'body', 'active',
+        'id', 'master_id', 'title', 'body', 'active',
         'created_at', 'updated_at',
     ];
 
