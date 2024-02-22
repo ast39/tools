@@ -19,23 +19,23 @@ class PlumberSeed extends Seeder
         $master = Master::create(['title' => 'Сантехник'])->id;
 
         $cat = Category::create(['master_id' => $master, 'title' => 'Биде'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Ванна'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Водяные счетчики'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Водяные фильтры'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Гигиенический душ'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Джакузи'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Душевая кабина'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Инсталляция'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Мойка'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Отопление'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Полотенцесушитель'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Разводка канализации'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Разводка труб'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Раковина'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Сантехник'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Смеситель'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Унитаз'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Устранение засоров'])->id;
-        $cat = Service::create(['master_id' => $master, 'title' => 'Устранение течи'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Ванна'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Водяные счетчики'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Водяные фильтры'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Гигиенический душ'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Джакузи'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Душевая кабина'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Инсталляция'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Мойка'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Отопление'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Полотенцесушитель'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Разводка канализации'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Разводка труб'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Раковина'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Сантехник'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Смеситель'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Унитаз'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Устранение засоров'])->id;
+        $cat = Category::create(['master_id' => $master, 'title' => 'Устранение течи'])->id;
     }
 }
