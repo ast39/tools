@@ -16,8 +16,8 @@ return new class extends Migration {
             $table->id()
                 ->comment('ID категории');
 
-            $table->unsignedBigInteger('master_id')
-                ->comment('ID мастера');
+            $table->unsignedBigInteger('sphere_id')
+                ->comment('ID сферы');
 
             $table->string('title')
                 ->comment('Название категории');
@@ -35,9 +35,9 @@ return new class extends Migration {
 
             $table->comment('Категории услуг');
 
-            $table->foreign('master_id', 'master_id_category_id')
+            $table->foreign('sphere_id', 'sphere_id_category_id')
                 ->references('id')
-                ->on('masters')
+                ->on('spheres')
                 ->onDelete('cascade');
         });
     }
@@ -48,7 +48,7 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('categories', function(Blueprint $table) {
-            $table->dropForeign('master_id_category_id');
+            $table->dropForeign('sphere_id_category_id');
         });
 
         Schema::dropIfExists('categories');

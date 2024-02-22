@@ -29,7 +29,7 @@ class Category extends Authenticatable {
      */
     public function master(): BelongsTo
     {
-        return $this->belongsTo(Master::class, 'master_id', 'id');
+        return $this->belongsTo(Sphere::class, 'master_id', 'id');
     }
 
     /**
@@ -55,7 +55,7 @@ class Category extends Authenticatable {
     ];
 
     protected $fillable = [
-        'id', 'master_id', 'title', 'body', 'active',
+        'id', 'sphere_id', 'title', 'body', 'active',
         'created_at', 'updated_at',
     ];
 

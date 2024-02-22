@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Enums\EUnitType;
 use App\Models\Category;
-use App\Models\Master;
+use App\Models\Sphere;
 use App\Models\Service;
 use Illuminate\Database\Seeder;
 
@@ -16,10 +16,10 @@ class ElectricSeed extends Seeder
      */
     public function run(): void
     {
-        $master = Master::create(['title' => 'Электрик'])->id;
+        $master = Sphere::create(['title' => 'Электрик'])->id;
 
 
-        $cat = Category::create(['master_id' => $master, 'title' => 'Автоматы, УЗО'])->id;
+        $cat = Category::create(['sphere_id' => $master, 'title' => 'Автоматы, УЗО'])->id;
 
         Service::create(['category_id' => $cat, 'title' => 'Установка электрического щитка', 'price' => 1450, 'unit' => EUnitType::Item->value, 'from' => 0]);
         Service::create(['category_id' => $cat, 'title' => 'Монтаж автомата, диф. автомата', 'price' => 450, 'unit' => EUnitType::Item->value, 'from' => 0]);
@@ -31,7 +31,7 @@ class ElectricSeed extends Seeder
         Service::create(['category_id' => $cat, 'title' => 'Выезд и оценка работ', 'price' => 0, 'unit' => EUnitType::Item->value, 'from' => 0]);
 
 
-        $cat = Category::create(['master_id' => $master, 'title' => 'Выключатели'])->id;
+        $cat = Category::create(['sphere_id' => $master, 'title' => 'Выключатели'])->id;
 
         Service::create(['category_id' => $cat, 'title' => 'Монтаж клавишного выключателя', 'price' => 350, 'unit' => EUnitType::Item->value, 'from' => 0]);
         Service::create(['category_id' => $cat, 'title' => 'Монтаж сенсорного выключателя', 'price' => 620, 'unit' => EUnitType::Item->value, 'from' => 0]);
@@ -43,7 +43,7 @@ class ElectricSeed extends Seeder
         Service::create(['category_id' => $cat, 'title' => 'Выезд мастера на дом', 'price' => 0, 'unit' => EUnitType::Item->value, 'from' => 0]);
 
 
-        $cat = Category::create(['master_id' => $master, 'title' => 'Диагностика проводки'])->id;
+        $cat = Category::create(['sphere_id' => $master, 'title' => 'Диагностика проводки'])->id;
 
         Service::create(['category_id' => $cat, 'title' => 'Аварийный выезд ( круглосуточно)', 'price' => 0, 'unit' => EUnitType::Item->value, 'from' => 0]);
         Service::create(['category_id' => $cat, 'title' => 'Диагностика электропроводки', 'price' => 450, 'unit' => EUnitType::Item->value, 'from' => 1]);
@@ -57,7 +57,7 @@ class ElectricSeed extends Seeder
         Service::create(['category_id' => $cat, 'title' => 'Выезд мастера на дом', 'price' => 0, 'unit' => EUnitType::Item->value, 'from' => 0]);
 
 
-        $cat = Category::create(['master_id' => $master, 'title' => 'Люстра'])->id;
+        $cat = Category::create(['sphere_id' => $master, 'title' => 'Люстра'])->id;
 
         Service::create(['category_id' => $cat, 'title' => 'Установка люстры', 'price' => 550, 'unit' => EUnitType::Item->value, 'from' => 0]);
         Service::create(['category_id' => $cat, 'title' => 'Демонтаж люстры', 'price' => 300, 'unit' => EUnitType::Item->value, 'from' => 0]);
@@ -75,7 +75,7 @@ class ElectricSeed extends Seeder
         Service::create(['category_id' => $cat, 'title' => 'Выезд мастера на дом', 'price' => 0, 'unit' => EUnitType::Item->value, 'from' => 0]);
 
 
-        $cat = Category::create(['master_id' => $master, 'title' => 'Ремонт электропроводки'])->id;
+        $cat = Category::create(['sphere_id' => $master, 'title' => 'Ремонт электропроводки'])->id;
 
         Service::create(['category_id' => $cat, 'title' => 'Прозвонка кабеля между точками', 'price' => 100, 'unit' => EUnitType::Item->value, 'from' => 1]);
         Service::create(['category_id' => $cat, 'title' => 'Разводка, прокладка электропроводки (кабеля)', 'price' => 70, 'unit' => EUnitType::MeterLinear->value, 'from' => 1]);
@@ -87,7 +87,7 @@ class ElectricSeed extends Seeder
         Service::create(['category_id' => $cat, 'title' => 'Выезд мастера на дом', 'price' => 0, 'unit' => EUnitType::Item->value, 'from' => 0]);
 
 
-        $cat = Category::create(['master_id' => $master, 'title' => 'Розетка'])->id;
+        $cat = Category::create(['sphere_id' => $master, 'title' => 'Розетка'])->id;
 
         Service::create(['category_id' => $cat, 'title' => 'Монтаж электрической розетки', 'price' => 350, 'unit' => EUnitType::Item->value, 'from' => 0]);
         Service::create(['category_id' => $cat, 'title' => 'Установка влагозащищенной розетки (ванная)', 'price' => 350, 'unit' => EUnitType::Item->value, 'from' => 0]);
@@ -102,7 +102,7 @@ class ElectricSeed extends Seeder
         Service::create(['category_id' => $cat, 'title' => 'Выезд мастера на дом', 'price' => 0, 'unit' => EUnitType::Item->value, 'from' => 0]);
 
 
-        $cat = Category::create(['master_id' => $master, 'title' => 'Сборка электрошитка'])->id;
+        $cat = Category::create(['sphere_id' => $master, 'title' => 'Сборка электрошитка'])->id;
 
 //        Service::create(['category_id' => $cat, 'title' => 'Выезд', 'price' => 555, 'unit' => EUnitType::Item->value, 'from' => 0]);
 //        Service::create(['category_id' => $cat, 'title' => 'Выезд', 'price' => 555, 'unit' => EUnitType::Item->value, 'from' => 0]);
@@ -115,7 +115,7 @@ class ElectricSeed extends Seeder
 //        Service::create(['category_id' => $cat, 'title' => 'Выезд', 'price' => 555, 'unit' => EUnitType::Item->value, 'from' => 0]);
 
 
-        $cat = Category::create(['master_id' => $master, 'title' => 'Светильники и Бра'])->id;
+        $cat = Category::create(['sphere_id' => $master, 'title' => 'Светильники и Бра'])->id;
 
         Service::create(['category_id' => $cat, 'title' => 'Установка светильника', 'price' => 250, 'unit' => EUnitType::Item->value, 'from' => 0]);
         Service::create(['category_id' => $cat, 'title' => 'Ремонт светильника', 'price' => 250, 'unit' => EUnitType::Item->value, 'from' => 0]);
@@ -129,7 +129,7 @@ class ElectricSeed extends Seeder
         Service::create(['category_id' => $cat, 'title' => 'Выезд мастера на дом', 'price' => 0, 'unit' => EUnitType::Item->value, 'from' => 0]);
 
 
-        $cat = Category::create(['master_id' => $master, 'title' => 'Штробление стен'])->id;
+        $cat = Category::create(['sphere_id' => $master, 'title' => 'Штробление стен'])->id;
 
 //        Service::create(['category_id' => $cat, 'title' => 'Выезд', 'price' => 555, 'unit' => EUnitType::Item->value, 'from' => 0]);
 //        Service::create(['category_id' => $cat, 'title' => 'Выезд', 'price' => 555, 'unit' => EUnitType::Item->value, 'from' => 0]);
@@ -146,7 +146,7 @@ class ElectricSeed extends Seeder
 //        Service::create(['category_id' => $cat, 'title' => 'Выезд', 'price' => 555, 'unit' => EUnitType::Item->value, 'from' => 0]);
 
 
-        $cat = Category::create(['master_id' => $master, 'title' => 'Электрик'])->id;
+        $cat = Category::create(['sphere_id' => $master, 'title' => 'Электрик'])->id;
 
 //        Service::create(['category_id' => $cat, 'title' => 'Выезд', 'price' => 555, 'unit' => EUnitType::Item->value, 'from' => 0]);
 //        Service::create(['category_id' => $cat, 'title' => 'Выезд', 'price' => 555, 'unit' => EUnitType::Item->value, 'from' => 0]);
@@ -168,7 +168,7 @@ class ElectricSeed extends Seeder
 //        Service::create(['category_id' => $cat, 'title' => 'Выезд', 'price' => 555, 'unit' => EUnitType::Item->value, 'from' => 0]);
 
 
-        $cat = Category::create(['master_id' => $master, 'title' => 'Электрика под ключ'])->id;
+        $cat = Category::create(['sphere_id' => $master, 'title' => 'Электрика под ключ'])->id;
 
         Service::create(['category_id' => $cat, 'title' => 'Монтаж/ замена электропроводки в квартире ~32 м2', 'price' => 23000, 'unit' => EUnitType::Item->value, 'from' => 0]);
         Service::create(['category_id' => $cat, 'title' => 'Монтаж/ замена электропроводки в квартире ~52 м2', 'price' => 38000, 'unit' => EUnitType::Item->value, 'from' => 0]);
@@ -178,7 +178,7 @@ class ElectricSeed extends Seeder
         Service::create(['category_id' => $cat, 'title' => 'Выезд и оценка работ', 'price' => 0, 'unit' => EUnitType::Item->value, 'from' => 0]);
 
 
-        $cat = Category::create(['master_id' => $master, 'title' => 'Электросчетчики'])->id;
+        $cat = Category::create(['sphere_id' => $master, 'title' => 'Электросчетчики'])->id;
 
         Service::create(['category_id' => $cat, 'title' => 'Установка счетчика электрического — однофазного', 'price' => 3000, 'unit' => EUnitType::Item->value, 'from' => 0]);
         Service::create(['category_id' => $cat, 'title' => 'Установка счетчика электрического — трехфазного', 'price' => 3800, 'unit' => EUnitType::Item->value, 'from' => 0]);

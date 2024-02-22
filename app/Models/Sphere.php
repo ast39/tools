@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
-class Master extends Authenticatable {
+class Sphere extends Authenticatable {
 
     use Filterable;
 
 
-    protected $table         = 'masters';
+    protected $table         = 'spheres';
 
     protected $primaryKey    = 'id';
 

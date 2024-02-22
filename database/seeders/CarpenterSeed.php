@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Enums\EUnitType;
 use App\Models\Category;
-use App\Models\Master;
+use App\Models\Sphere;
 use App\Models\Service;
 use Illuminate\Database\Seeder;
 
@@ -16,6 +16,6 @@ class CarpenterSeed extends Seeder
      */
     public function run(): void
     {
-        $master = Master::create(['title' => 'Плотник'])->id;
+        $master = Sphere::create(['title' => 'Плотник'])->id;
     }
 }
