@@ -1,5 +1,5 @@
 @php
-
+    use App\Enums\EUnitType;
 @endphp
 
 @extends('admin.layouts.app')
@@ -44,6 +44,28 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="price" class="form-label required">{{ __('Цена') }}</label>
+                    <input type="text" class="form-control" id="price" name="price" value="{{ $service->price }}" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="from" class="form-label required">{{ __('Диапазон цены') }}</label>
+                    <select  class="form-control form-select" id="from" name="from">
+                        <option title="{{ __('Фиксированная') }}" value="0" {{ ($service->from ?? 0) == 0 ? 'selected' : null }}>{{ __('Фиксированная') }}</option>
+                        <option title="{{ __('Начальная') }}" value="1" {{ ($service->from ?? 0) == 1 ? 'selected' : null }}>{{ __('Начальная') }}</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="unit_id" class="form-label required">{{ __('Единица измерения') }}</label>
+                    <select  class="form-control form-select" id="unit_id" name="unit_id">
+                        @foreach(EUnitType::cases() as $unit)
+                            <option title="{{ __('unit_' . $unit->value) }}" value="{{ $unit->value }}" {{ ($service->unit ?? 1) == $unit->value ? 'selected' : null }}>{{ __('unit_' . $unit->value) }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="mb-3">
                     <label for="active" class="form-label required">{{ __('Видимость') }}</label>
                     <select  class="form-control form-select" id="active" name="active">
                         <option title="Скрыть" value="0" {{ ($service->active ?? 0) == 0 ? 'selected' : null }}>{{ __('Скрыть') }}</option>
@@ -64,4 +86,3 @@
         <div class="card-footer bg-light border-0"></div>
     </div>
 @endsection
-
