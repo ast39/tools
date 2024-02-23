@@ -4,16 +4,28 @@
 
 @extends('admin.layouts.app')
 
-@section('title', __('Добавить сферу'))
+@section('title', __('Добавить категорию'))
 
 @section('content')
     <div class="card bg-primary text-white">
-        <div class="card-header">{{ __('Добавить сферу') }}</div>
+        <div class="card-header">{{ __('Добавить категорию') }}</div>
 
         <div class="card-body bg-light">
-            <form method="post" action="{{ route('admin.sphere.store') }}">
+            <form method="post" action="{{ route('admin.category.store') }}">
                 @csrf
                 @method('POST')
+
+                <div class="mb-3">
+                    <label for="sphere_id" class="form-label required">{{ __('Сфера') }}</label>
+                    <select  class="form-control form-select" id="sphere_id" name="sphere_id">
+                        @foreach($spheres as $sphere)
+                            <option title="{{ $sphere->title }}" value="{{ $sphere->id }}" {{ (request()->sphere_id ?? 1) == $sphere->id ? 'selected' : null }}>{{ $sphere->title }}</option>
+                        @endforeach
+                    </select>
+                    @error('sphere_id')
+                        <p class="text-danger mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
 
                 <div class="mb-3">
                     <label for="title" class="form-label required">{{ __('Название') }}</label>
@@ -43,7 +55,7 @@
                 </div>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                    <a href="{{ route('admin.sphere.index') }}" class="btn btn-secondary me-1 rounded">{{ __('Назад') }}</a>
+                    <a href="{{ route('admin.category.index') }}" class="btn btn-secondary me-1 rounded">{{ __('Назад') }}</a>
                     <button type="submit" class="btn btn-primary rounded">{{ __('Добавить') }}</button>
                 </div>
             </form>

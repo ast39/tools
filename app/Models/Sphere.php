@@ -32,6 +32,16 @@ class Sphere extends Authenticatable {
     }
 
 
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeOnlyActive($query)
+    {
+        return $query->where('active', 1);
+    }
+
+
     protected $with = [
         //
     ];

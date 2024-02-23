@@ -16,6 +16,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.sphere.index') }}">{{ __('Сферы') }}</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.category.index') }}">{{ __('Категории') }}</a>
+                    </li>
                 @endauth
             </ul>
 

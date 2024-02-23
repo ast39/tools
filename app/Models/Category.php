@@ -27,9 +27,9 @@ class Category extends Authenticatable {
     /**
      * @return BelongsTo
      */
-    public function master(): BelongsTo
+    public function sphere(): BelongsTo
     {
-        return $this->belongsTo(Sphere::class, 'master_id', 'id');
+        return $this->belongsTo(Sphere::class, 'sphere_id', 'id');
     }
 
     /**
