@@ -18,24 +18,12 @@
                         <td class="text-end">{{ $sphere->title }}</a></td>
                     </tr>
                     <tr>
-                        <th class="text-start">{{ __('Для кого') }}</th>
-                        <td class="text-end">{{ Helper::programType($program->type) }}</a></td>
-                    </tr>
-                    <tr>
-                        <th class="text-start">{{ __('Длительность') }}</th>
-                        <td class="text-end">{{ $program->period }} {{ __('мин.') }}</td>
-                    </tr>
-                    <tr>
-                        <th class="text-start">{{ __('Стоимость') }}</th>
-                        <td class="text-end">{{ number_format($program->price, 0, '.', ' ') }} {{ __('руб.') }}</td>
-                    </tr>
-                    <tr>
-                        <th class="text-start">{{ __('Заметки') }}</th>
-                        <td class="text-end">{{ $program->note ?? ' - ' }}</td>
+                        <th class="text-start">{{ __('Описание') }}</th>
+                        <td class="text-end">{{ $sphere->body }}</a></td>
                     </tr>
                     <tr>
                         <th class="text-start">{{ __('Статус') }}</th>
-                        <td class="text-end">{{ Helper::programStatus($program->status) }}</td>
+                        <td class="text-end">{{ __('sphere_status_' . $sphere->active) }}</td>
                     </tr>
                     <tr>
                         <th class="text-start">{{ __('Дата добавления') }}</th>

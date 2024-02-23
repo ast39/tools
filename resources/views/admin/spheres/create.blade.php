@@ -34,8 +34,8 @@
                 <div class="mb-3">
                     <label for="active" class="form-label required">{{ __('Видимость') }}</label>
                     <select  class="form-control form-select" id="active" name="active">
-                        <option title="Скрыть" value="0" {{ (request()->active ?? 0) == 0 ? 'selected' : null }}>{{ __('Скрыть') }}</option>
-                        <option title="Показать" value="1" {{ (request()->active ?? 0) == 1 ? 'selected' : null }}>{{ __('Показать') }}</option>
+                        <option title="Скрыть" value="0" {{ (request()->active ?? 1) == 0 ? 'selected' : null }}>{{ __('Скрыть') }}</option>
+                        <option title="Показать" value="1" {{ (request()->active ?? 1) == 1 ? 'selected' : null }}>{{ __('Показать') }}</option>
                     </select>
                     @error('active')
                         <p class="text-danger mt-2">{{ $message }}</p>

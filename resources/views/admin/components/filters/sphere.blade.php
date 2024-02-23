@@ -14,9 +14,9 @@
             </div>
 
             <div class="mmot-filterline__one">
-                <select name="user" id="user" class="form-select form-control">
-                    <option title="{{ __('Видимые') }}" {{ (request()->active ?? null) == 1 ? 'selected' : '' }} value="1">{{ __('Видимые') }}</option>
-                    <option title="{{ __('Скрытые') }}" {{ (request()->active ?? null) == 0 ? 'selected' : '' }} value="0">{{ __('Скрытые') }}</option>
+                <select name="active" id="active" class="form-select form-control">
+                    <option title="{{ __('Скрытые') }}" {{ (request()->active ?? 1) == 0 ? 'selected' : '' }} value="0">{{ __('Скрытые') }}</option>
+                    <option title="{{ __('Видимые') }}" {{ (request()->active ?? 1) == 1 ? 'selected' : '' }} value="1">{{ __('Видимые') }}</option>
                 </select>
             </div>
         </div>
