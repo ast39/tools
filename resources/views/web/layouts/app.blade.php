@@ -3,51 +3,56 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }} :: Сайт</title>
+    <title>@yield('title')</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <!-- Scripts -->
+    @php
+        include_once public_path() . '/images/site_sprite.svg';
+    @endphp
+
+    {{-- CSS grubber --}}
+    @stack('css')
+
+    {{-- Scripts --}}
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    {{-- Fa Icons CSS (CDN) --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ asset('web/css/app.css') }}">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }} :: Сайт
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<div id="app" class="newdesign">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+    {{-- Навигация --}}
+    @include('web.layouts.components.navbar')
 
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        @if (Route::has('web.home'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('web.home') }}">{{ __('Сайт') }}</a>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
+    <main class="py-4">
+        <div class="container">
             @yield('content')
-        </main>
-    </div>
+        </div>
+    </main>
+</div>
+
+{{-- Footer --}}
+@include('web.layouts.components.footer')
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<script>
+    var token = '{{ csrf_token() }}';
+</script>
+
+<script type="text/javascript" src="{{ asset('web/js/app.js?v=' . time()) }}"></script>
+
+{{-- JS grubber --}}
+@stack('js')
 </body>
 </html>
