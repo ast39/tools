@@ -62,6 +62,7 @@
                 <a href="{{ route('admin.sphere.create') }}" class="btn btn-primary rounded">{{ __('Добавить сферу') }}</a>
             </div>
         </div>
+        <div class="card-footer bg-light border-0"></div>
     </div>
 @endsection
 

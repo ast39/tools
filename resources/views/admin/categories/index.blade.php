@@ -64,6 +64,7 @@
                 <a href="{{ route('admin.category.create') }}" class="btn btn-primary rounded">{{ __('Добавить категорию') }}</a>
             </div>
         </div>
+        <div class="card-footer bg-light border-0"></div>
     </div>
 @endsection
 

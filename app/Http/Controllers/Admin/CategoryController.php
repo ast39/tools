@@ -60,7 +60,7 @@ class CategoryController extends Controller {
      */
     public function show(int $id): View
     {
-        $category = Category::with('sphere')
+        $category = Category::with(['sphere', 'services'])
             ->findOrFail($id);
 
         return view('admin.categories.show', [

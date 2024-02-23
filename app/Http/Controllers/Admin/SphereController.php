@@ -54,7 +54,8 @@ class SphereController extends Controller {
      */
     public function show(int $id): View
     {
-        $sphere = Sphere::findOrFail($id);
+        $sphere = Sphere::with('categories')
+            ->findOrFail($id);
 
         return view('admin.spheres.show', [
             'sphere' => $sphere,

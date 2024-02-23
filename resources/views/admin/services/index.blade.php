@@ -66,6 +66,7 @@
                 <a href="{{ route('admin.service.create') }}" class="btn btn-primary rounded">{{ __('Добавить услугу') }}</a>
             </div>
         </div>
+        <div class="card-footer bg-light border-0"></div>
     </div>
 @endsection
 

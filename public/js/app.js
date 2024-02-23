@@ -1,34 +1,33 @@
 $(function() {
     var minwidth_sandwichfilter = {};
-    
+
     $(document).ready(function(){
         funcGetTabView();
-        
-        
+
         // Функция активации Select2
         funcSelect2();
-        
+
         // Функция активации Select2
         funcSandwichFilter();
-        
+
         // Функция дает возможность сбросить введенные данные в input
         funcInputClear();
-        
+
         /* Добавление, редактирование, удаление */
         funcDeleteFieldLine();
         funcEditFieldLine();
         funcAddFieldLine();
     });
-    
+
     /* ---------- Функция получение view данных по клику таба ---------- */
     function funcGetTabView(){
         if($('[data-get_tab_view]').length > 0){
             $('[data-get_tab_view]').first().click();
             getTabView($('[data-get_tab_view]').first());
         }
-        
+
         $('body').on('click', '[data-get_tab_view]', function(){ getTabView($(this)); });
-        
+
         function getTabView(block){
             let tab = block.data('get_tab_view');
 
@@ -41,11 +40,11 @@ $(function() {
                     $('[data-get_tab_view_content="' + tab + '"]').html(html);
                 }
             });
-            
+
             return false;
         }
     }
-    
+
     /* ---------- Функция добавления записи в справочнике ---------- */
     function funcAddFieldLine(){
         /* Открыть модальное окно добавления записи */
@@ -206,7 +205,7 @@ $(function() {
             return result;
         }
     }
-    
+
     /* ---------- Функция удаления записи в справочнике ---------- */
     function funcDeleteFieldLine(){
         $('body').on('click', '[data-delete_field_line]', function(){
@@ -242,7 +241,7 @@ $(function() {
             });
         });
     }
-    
+
     /* ---------- Функция редактирования записи в справочнике ---------- */
     function funcEditFieldLine(){
         /* Открыть модальное окно редакируемой записи */
@@ -428,7 +427,7 @@ $(function() {
             }
         }
     }
-    
+
     /* ---------- Функция отоюражения selecta фильтров, если элементы не вмещаются в объект ---------- */
     function funcSandwichFilter(){
         if($('[data-filterline__sandwich]').length > 0){
@@ -469,7 +468,7 @@ $(function() {
             }
         }
     }
-    
+
     /* ---------- Функция дает возможность сбросить введенные данные в input ---------- */
     function funcInputClear(){
         $('[data-input_clear]').each(function(){ changeStatusInputClear($(this)); });
@@ -496,7 +495,7 @@ $(function() {
             }
         }
     }
-    
+
     /* Конвертер даты в другой формат стандартного html пикера */
     function funcDateConverter(format, date){
         date = date.split('-');

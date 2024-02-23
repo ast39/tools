@@ -52,6 +52,7 @@
             </form>
 
         </div>
+        <div class="card-footer bg-light border-0"></div>
     </div>
 @endsection
 

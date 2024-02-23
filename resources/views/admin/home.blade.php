@@ -1,23 +1,19 @@
+@php
+
+@endphp
+
 @extends('admin.layouts.app')
 
+@section('title', __('Админ панель'))
+
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Админка') }}</div>
+    <div class="card bg-primary text-white">
+        <div class="card-header">{{ __('Админ панель') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('Это страница админки') }}
-                </div>
-            </div>
+        <div class="card-body bg-light text-secondary">
+            Добро пожаловать!
         </div>
+
+        <div class="card-footer bg-light border-0"></div>
     </div>
-</div>
 @endsection

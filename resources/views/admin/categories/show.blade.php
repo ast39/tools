@@ -36,6 +36,58 @@
                 </tbody>
             </table>
 
+            <div class="accordion mb-3">
+                <div class="accordion-item">
+                    <h2 class="accordion-header shadow-sm" id="heading1">
+                        <button class="accordion-button bg-light text-secondary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                            {{ __('Услуги') }}
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
+                         data-bs-parent="#accordion1">
+                        <div class="accordion-body">
+                            <table class="table table-bordered">
+                                <thead class="table-secondary">
+                                <tr>
+                                    <th class="text-center">{{ __('#') }}</th>
+                                    <th class="text-start">{{ __('Название') }}</th>
+                                    <th class="text-start">{{ __('Описание раздела') }}</th>
+                                    <th class="text-end">{{ __('Видимость') }}</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                @forelse($category->services as $service)
+                                    <tr>
+                                        <td class="text-center">{{ $loop->iteration }}</td>
+                                        <td class="text-start"><a class="text-primary" href="{{ route('admin.service.show', $service->id) }}">{{ $service->title }}</a></td>
+                                        <td class="text-start">{!! $service->body !!}</td>
+                                        <td class="text-end">
+                                            <form method="post" action="{{ route('admin.service.destroy', $service->id) }}" class="admin-table__nomargin">
+                                                @csrf
+                                                @method('DELETE')
+
+                                                <div class="mmot-table__action">
+                                                    <a href="{{ route('admin.service.edit', $service->id) }}" class="mmot-table__action__one"><svg class="mmot-table_view mmot-table__ico"><use xlink:href="#site-edit"></use></svg></a>
+                                                    <button type="submit" class="mmot-table__action__one" onclick="return confirm('{{ __('Вы уверены, что хотите удалить услугу?') }}')"><svg class="mmot-table__delete mmot-table__ico"><use xlink:href="#site-delete"></use></svg></button>
+                                                </div>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="4">
+                                            <div class="text-center p-2 mb-2 bg-secondary bg-gradient text-white rounded">{{ __('Категории отсутствуют') }}</div>
+                                        </td>
+                                    </tr>
+                                @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <form method="post" action="{{ route('admin.category.destroy', $category->id) }}">
                 @csrf
                 @method('DELETE')
@@ -48,6 +100,7 @@
                 </div>
             </form>
         </div>
+        <div class="card-footer bg-light border-0"></div>
     </div>
 @endsection
 
