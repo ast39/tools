@@ -6,7 +6,8 @@ use App\Http\Filters\Admin\SphereFilter;
 use App\Http\Requests\Admin\Sphere\SphereFilterRequest;
 use App\Http\Requests\Admin\Sphere\SphereStoreRequest;
 use App\Http\Requests\Admin\Sphere\SphereUpdateRequest;
-use App\Models\Sphere;
+use App\Http\Services\SphereService;
+use App\Http\Traits\Dictionarable;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -17,9 +18,16 @@ use Illuminate\View\View;
  */
 class SphereController extends Controller {
 
-    public function __construct()
+    use Dictionarable;
+
+
+    protected SphereService $sphereService;
+
+    public function __construct(SphereService $service)
     {
         $this->middleware('access.admin');
+
+        $this->sphereService = $service;
     }
 
     /**
@@ -37,9 +45,7 @@ class SphereController extends Controller {
             'queryParams' => $data
         ]);
 
-        $spheres = Sphere::filter($filter)
-            ->orderBy('id')
-            ->paginate(10);
+        $spheres = $this->sphereService->getAll($filter);
 
         return view('admin.spheres.index', [
             'spheres' => $spheres,
@@ -54,11 +60,8 @@ class SphereController extends Controller {
      */
     public function show(int $id): View
     {
-        $sphere = Sphere::with('categories')
-            ->findOrFail($id);
-
         return view('admin.spheres.show', [
-            'sphere' => $sphere,
+            'sphere' => $this->sphereService->getById($id),
         ]);
     }
 
@@ -80,9 +83,7 @@ class SphereController extends Controller {
      */
     public function store(SphereStoreRequest $request): RedirectResponse
     {
-        $data = $request->validated();
-
-        Sphere::create($data);
+        $this->sphereService->create($request->validated());
 
         return redirect()->route('admin.sphere.index');
     }
@@ -95,10 +96,8 @@ class SphereController extends Controller {
      */
     public function edit(int $id): View
     {
-        $sphere = Sphere::findOrFail($id);
-
         return view('admin.spheres.edit', [
-            'sphere' => $sphere,
+            'sphere' => $this->sphereService->getById($id),
         ]);
     }
 
@@ -111,11 +110,7 @@ class SphereController extends Controller {
      */
     public function update(SphereUpdateRequest $request, int $id): RedirectResponse
     {
-        $data = $request->validated();
-
-        $sphere = Sphere::findOrFail($id);
-
-        $sphere->update($data);
+        $this->sphereService->update($id, $request->validated());
 
         return redirect()->route('admin.sphere.index');
     }
@@ -128,9 +123,7 @@ class SphereController extends Controller {
      */
     public function destroy(int $id): RedirectResponse
     {
-        $sphere = Sphere::findOrFail($id);
-
-        $sphere->delete();
+        $this->sphereService->delete($id);
 
         return redirect()->route('admin.sphere.index');
     }

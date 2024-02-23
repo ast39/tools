@@ -26,7 +26,7 @@
 
     {{-- Fa Icons CSS (CDN) --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="{{ asset('web/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/web/app.css') }}">
 </head>
 <body>
 <div id="app" class="newdesign">
@@ -50,7 +50,7 @@
     var token = '{{ csrf_token() }}';
 </script>
 
-<script type="text/javascript" src="{{ asset('web/js/app.js?v=' . time()) }}"></script>
+<script type="text/javascript" src="{{ asset('js/web/app.js?v=' . time()) }}"></script>
 
 {{-- JS grubber --}}
 @stack('js')

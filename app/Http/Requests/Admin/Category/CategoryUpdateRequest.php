@@ -4,6 +4,7 @@ namespace App\Http\Requests\Admin\Category;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 
 class CategoryUpdateRequest extends FormRequest
@@ -26,7 +27,7 @@ class CategoryUpdateRequest extends FormRequest
         return [
 
             'sphere_id' => ['integer', 'exists:spheres,id'],
-            'title' => ["string", "unique:categories,title,{$this->title}"],
+            'title' => ["string", Rule::unique('categories', 'title')->ignore($this->category)],
             'body' => ['string'],
             'active' => ['integer', 'in:0,1'],
         ];

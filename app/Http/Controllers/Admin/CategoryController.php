@@ -6,8 +6,8 @@ use App\Http\Filters\Admin\CategoryFilter;
 use App\Http\Requests\Admin\Category\CategoryFilterRequest;
 use App\Http\Requests\Admin\Category\CategoryStoreRequest;
 use App\Http\Requests\Admin\Category\CategoryUpdateRequest;
+use App\Http\Services\CategoryService;
 use App\Http\Traits\Dictionarable;
-use App\Models\Category;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -21,9 +21,14 @@ class CategoryController extends Controller {
     use Dictionarable;
 
 
-    public function __construct()
+    protected CategoryService $categoryService;
+
+
+    public function __construct(CategoryService $service)
     {
         $this->middleware('access.admin');
+
+        $this->categoryService = $service;
     }
 
     /**
@@ -41,10 +46,7 @@ class CategoryController extends Controller {
             'queryParams' => array_filter($data)
         ]);
 
-        $categories = Category::with('sphere')
-            ->filter($filter)
-            ->orderBy('id')
-            ->paginate(10);
+        $categories = $this->categoryService->getAll($filter);
 
         return view('admin.categories.index', [
             'categories' => $categories,
@@ -60,11 +62,8 @@ class CategoryController extends Controller {
      */
     public function show(int $id): View
     {
-        $category = Category::with(['sphere', 'services'])
-            ->findOrFail($id);
-
         return view('admin.categories.show', [
-            'category' => $category,
+            'category' => $this->categoryService->getById($id),
         ]);
     }
 
@@ -88,9 +87,7 @@ class CategoryController extends Controller {
      */
     public function store(CategoryStoreRequest $request): RedirectResponse
     {
-        $data = $request->validated();
-
-        Category::create($data);
+        $this->categoryService->create($request->validated());
 
         return redirect()->route('admin.category.index');
     }
@@ -103,10 +100,8 @@ class CategoryController extends Controller {
      */
     public function edit(int $id): View
     {
-        $category = Category::findOrFail($id);
-
         return view('admin.categories.edit', [
-            'category' => $category,
+            'category' => $this->categoryService->getById($id),
             'spheres' => $this->sphereList(),
         ]);
     }
@@ -120,11 +115,7 @@ class CategoryController extends Controller {
      */
     public function update(CategoryUpdateRequest $request, int $id): RedirectResponse
     {
-        $data = $request->validated();
-
-        $category = Category::findOrFail($id);
-
-        $category->update($data);
+        $this->categoryService->update($id, $request->validated());
 
         return redirect()->route('admin.category.index');
     }
@@ -137,9 +128,7 @@ class CategoryController extends Controller {
      */
     public function destroy(int $id): RedirectResponse
     {
-        $category = Category::findOrFail($id);
-
-        $category->delete();
+        $this->categoryService->delete($id);
 
         return redirect()->route('admin.category.index');
     }

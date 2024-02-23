@@ -37,7 +37,7 @@ class ElectricianController extends Controller {
     public function show(int $id): View
     {
         $category = Category::with('services')
-            ->where('sphere_id', $id)
+            ->where('id', $id)
             ->orderBy('id')
             ->first();
 

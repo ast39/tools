@@ -4,6 +4,7 @@ namespace App\Http\Requests\Admin\Sphere;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 
 class SphereUpdateRequest extends FormRequest
@@ -25,7 +26,7 @@ class SphereUpdateRequest extends FormRequest
     {
         return [
 
-            'title' => ["string", "unique:spheres,title,{$this->title}"],
+            'title' => ["string", Rule::unique('spheres', 'title')->ignore($this->sphere)],
             'body' => ['string'],
             'active' => ['integer', 'in:0,1'],
         ];

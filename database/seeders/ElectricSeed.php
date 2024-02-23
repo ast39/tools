@@ -19,7 +19,12 @@ class ElectricSeed extends Seeder
         $master = Sphere::create(['title' => 'Электрик'])->id;
 
 
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Автоматы, УЗО'])->id;
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Автоматы, УЗО',
+            'body' => 'Желаете обезопасить себя и близких от несчастных случаев, связанных с домашней электропроводкой и подключенными
+            устройствами? Вызывайте мастера из службы «Мастера рядом»! Установим автоматы УЗО в удобное для вас время и по низким,
+            доступным для всех, ценам.'])->id;
 
         Service::create(['category_id' => $cat, 'title' => 'Установка электрического щитка', 'price' => 1450, 'unit' => EUnitType::Item->value, 'from' => 0]);
         Service::create(['category_id' => $cat, 'title' => 'Монтаж автомата, диф. автомата', 'price' => 450, 'unit' => EUnitType::Item->value, 'from' => 0]);

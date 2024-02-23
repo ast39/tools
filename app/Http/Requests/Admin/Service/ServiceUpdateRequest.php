@@ -5,6 +5,7 @@ namespace App\Http\Requests\Admin\Service;
 use App\Enums\EUnitType;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Enum;
 
 
@@ -29,7 +30,7 @@ class ServiceUpdateRequest extends FormRequest
 
             'sphere_id' => ['integer', 'exists:spheres,id'],
             'category_id' => ['integer', 'exists:categories,id'],
-            'title' => ["string", "unique:services,title,{$this->title}"],
+            'title' => ["string", Rule::unique('services', 'title')->ignore($this->service)],
             'body' => ['string'],
             'price' => ['regex:/^\d+(\.\d{1,2})?$/'],
             'from' => ['integer', 'in:0,1'],
