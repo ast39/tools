@@ -20,10 +20,18 @@
 
             <div class="mmot-filterline__one">
                 <select name="category" id="category" class="form-select form-control">
-                    <option title="{{ __('Все') }}" {{ (request()->category ?? 0) == 0 ? 'selected' : '' }} value="0">{{ __('Все') }}</option>
-                    @foreach($categories as $category)
-                        <option title="{{ $category->title }}" {{ (request()->category ?? null) == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->title }}</option>
-                    @endforeach
+                    @if(request()->sphere)
+                        <option title="{{ __('Все') }}" {{ (request()->category ?? 0) == 0 ? 'selected' : '' }} value="0">{{ __('Все') }}</option>
+                        @foreach($categories as $category)
+                            @if($category->sphere_id == request()->sphere)
+                                <option title="{{ $category->title }}" {{ (request()->category ?? null) == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->title }}</option>
+                            @endif;
+                        @endforeach
+                    @endif
+{{--                    <option title="{{ __('Все') }}" {{ (request()->category ?? 0) == 0 ? 'selected' : '' }} value="0">{{ __('Все') }}</option>--}}
+{{--                    @foreach($categories as $category)--}}
+{{--                        <option title="{{ $category->title }}" {{ (request()->category ?? null) == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->title }}</option>--}}
+{{--                    @endforeach--}}
                 </select>
             </div>
 
@@ -50,3 +58,30 @@
         </div>
     </div>
 </form>
+
+@push('js')
+    <script>
+        $(document).ready(function() {
+            let categories = JSON.parse('@json($categories)')
+
+            $('#sphere').change(function () {
+                let value = $("#sphere option:selected").val();
+                let $select = $('#category');
+
+                $select.empty();
+                $select.append($('<option>', {
+                    value: 0,
+                    text: 'Все'
+                }));
+
+                categories.filter((category) => Number(category.sphere_id) === Number(value))
+                    .forEach(category => {
+                        $select.append($('<option>', {
+                            value: category.id,
+                            text: category.title
+                        }));
+                    });
+            });
+        });
+    </script>
+@endpush

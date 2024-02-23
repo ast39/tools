@@ -18,8 +18,9 @@
                 <div class="mb-3">
                     <label for="sphere_id" class="form-label required">{{ __('Сфера') }}</label>
                     <select  class="form-control form-select" id="sphere_id" name="sphere_id">
+                        <option title="Выберите сферу" {{ (old('sphere_id') ?? null) == null ? 'selected' : null }}>Выберите сферу</option>
                         @foreach($spheres as $sphere)
-                            <option title="{{ $sphere->title }}" value="{{ $sphere->id }}" {{ (old('sphere_id') ?? 1) == $sphere->id ? 'selected' : null }}>{{ $sphere->title }}</option>
+                            <option title="{{ $sphere->title }}" value="{{ $sphere->id }}" {{ (old('sphere_id') ?? null) == $sphere->id ? 'selected' : null }}>{{ $sphere->title }}</option>
                         @endforeach
                     </select>
                     @error('sphere_id')
@@ -30,9 +31,9 @@
                 <div class="mb-3">
                     <label for="category_id" class="form-label required">{{ __('Категория') }}</label>
                     <select  class="form-control form-select" id="category_id" name="category_id">
-                        @foreach($categories as $category)
-                            <option title="{{ $category->title }}" value="{{ $category->id }}" {{ (old('category_id') ?? 1) == $category->id ? 'selected' : null }}>{{ $category->title }}</option>
-                        @endforeach
+{{--                        @foreach($categories as $category)--}}
+{{--                            <option title="{{ $category->title }}" value="{{ $category->id }}" {{ (old('category_id') ?? 1) == $category->id ? 'selected' : null }}>{{ $category->title }}</option>--}}
+{{--                        @endforeach--}}
                     </select>
                     @error('category_id')
                         <p class="text-danger mt-2">{{ $message }}</p>
@@ -106,4 +107,28 @@
         <div class="card-footer bg-light border-0"></div>
     </div>
 @endsection
+
+@push('js')
+    <script>
+        $(document).ready(function() {
+            let categories = JSON.parse('@json($categories)')
+
+            $('#sphere_id').change(function () {
+                let value = $("#sphere_id option:selected").val();
+                let $select = $('#category_id');
+
+                $select.empty();
+                $select.append('<option value="0">Выберите категорию</option>');
+
+                categories.filter((category) => Number(category.sphere_id) === Number(value))
+                    .forEach(category => {
+                        $select.append($('<option>', {
+                            value: category.id,
+                            text: category.title
+                        }));
+                    });
+            });
+        });
+    </script>
+@endpush
 

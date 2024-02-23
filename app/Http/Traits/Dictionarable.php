@@ -18,7 +18,7 @@ trait Dictionarable {
     {
         return Sphere::query()
             ->onlyActive()
-            ->orderBy('title')
+            ->orderBy('id')
             ->get();
     }
 
@@ -31,7 +31,7 @@ trait Dictionarable {
     {
         return Category::query()
             ->onlyActive()
-            ->orderBy('title')
+            ->orderBy('id')
             ->get();
     }
 
