@@ -2,8 +2,10 @@
 
 namespace App\Http\Requests\Admin\Service;
 
+use App\Enums\EUnitType;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Enum;
 
 
 class ServiceUpdateRequest extends FormRequest
@@ -29,6 +31,9 @@ class ServiceUpdateRequest extends FormRequest
             'category_id' => ['integer', 'exists:categories,id'],
             'title' => ["string", "unique:services,title,{$this->title}"],
             'body' => ['string'],
+            'price' => ['regex:/^\d+(\.\d{1,2})?$/'],
+            'from' => ['integer', 'in:0,1'],
+            'unit_id' => ['integer', new Enum(EUnitType::class)],
             'active' => ['integer', 'in:0,1'],
         ];
     }
