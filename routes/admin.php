@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SphereController;
 use App\Http\Controllers\Admin\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -30,4 +31,16 @@ Route::resource('categories', CategoryController::class)
         'edit' => 'admin.category.edit',
         'update' => 'admin.category.update',
         'destroy' => 'admin.category.destroy',
+    ]);
+
+# Услуги
+Route::resource('services', ServiceController::class)
+    ->names([
+        'index' => 'admin.service.index',
+        'show' => 'admin.service.show',
+        'create' => 'admin.service.create',
+        'store' => 'admin.service.store',
+        'edit' => 'admin.service.edit',
+        'update' => 'admin.service.update',
+        'destroy' => 'admin.service.destroy',
     ]);

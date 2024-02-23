@@ -13,11 +13,14 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 @auth
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.sphere.index') }}">{{ __('Сферы') }}</a>
+                    <li class="nav-item ">
+                        <a class="nav-link {{ stripos(request()->route()->getName(), 'admin.sphere') !== false ? 'text-white' : '' }}" href="{{ route('admin.sphere.index') }}">{{ __('Сферы') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.category.index') }}">{{ __('Категории') }}</a>
+                        <a class="nav-link {{ stripos(request()->route()->getName(), 'admin.category') !== false ? 'text-white' : '' }}" href="{{ route('admin.category.index') }}">{{ __('Категории') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ stripos(request()->route()->getName(), 'admin.service') !== false ? 'text-white' : '' }}" href="{{ route('admin.service.index') }}">{{ __('Услуги') }}</a>
                     </li>
                 @endauth
             </ul>

@@ -2,7 +2,7 @@
 
 @endphp
 
-<form method="get" action="{{ route('admin.category.index') }}" data-filterline__sandwich>
+<form method="get" action="{{ route('admin.service.index') }}" data-filterline__sandwich>
     <div class="mmot-filterline__sandwich dselect-wrapper" data-filterline_sandwich_parent="filter_planing">
         <div class="mmot-filterline__sandwich__head form-select">{{ __('Фильтр') }}</div>
     </div>
@@ -14,6 +14,15 @@
                     <option title="{{ __('Все') }}" {{ (request()->sphere ?? 0) == 0 ? 'selected' : '' }} value="0">{{ __('Все') }}</option>
                     @foreach($spheres as $sphere)
                         <option title="{{ $sphere->title }}" {{ (request()->sphere ?? null) == $sphere->id ? 'selected' : '' }} value="{{ $sphere->id }}">{{ $sphere->title }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mmot-filterline__one">
+                <select name="category" id="category" class="form-select form-control">
+                    <option title="{{ __('Все') }}" {{ (request()->category ?? 0) == 0 ? 'selected' : '' }} value="0">{{ __('Все') }}</option>
+                    @foreach($categories as $category)
+                        <option title="{{ $category->title }}" {{ (request()->category ?? null) == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->title }}</option>
                     @endforeach
                 </select>
             </div>
