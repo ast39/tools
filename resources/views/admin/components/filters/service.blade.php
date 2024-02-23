@@ -41,7 +41,7 @@
 
         <div class="mmot-filterline">
             <div class="mmot-filterline__one">
-                <a href="{{ route('admin.sphere.index') }}" type="button" class="btn btn-secondary w block">{{ __('Сбросить') }}</a>
+                <a href="{{ route('admin.service.index') }}" type="button" class="btn btn-secondary w block">{{ __('Сбросить') }}</a>
             </div>
 
             <div class="mmot-filterline__one">

@@ -1,4 +1,8 @@
 {
     "sphere_status_1": "Видимый",
-    "sphere_status_0": "Скрытый"
+    "sphere_status_0": "Скрытый",
+
+    "unit_1": "шт.",
+    "unit_2": "м/кв",
+    "unit_3": "м/п"
 }

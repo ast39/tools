@@ -1,5 +1,6 @@
 @php
-
+    use App\Http\Libs\Helper;
+    use Illuminate\Support\Str;
 @endphp
 
 @extends('admin.layouts.app')
@@ -22,6 +23,7 @@
                     <th class="text-center">{{ __('#') }}</th>
                     <th class="text-start">{{ __('Название') }}</th>
                     <th class="text-start">{{ __('Описание раздела') }}</th>
+                    <th class="text-end">{{ __('Цена') }}</th>
                     <th class="text-start">{{ __('Категория') }}</th>
                     <th class="text-start">{{ __('Сфера') }}</th>
                     <th class="text-end">{{ __('Видимость') }}</th>
@@ -33,7 +35,8 @@
                     <tr>
                         <td class="text-center">{{ $loop->iteration }}</td>
                         <td class="text-start"><a class="text-primary" href="{{ route('admin.service.show', $service->id) }}">{{ $service->title }}</a></td>
-                        <td class="text-start">{!! $service->body !!}</td>
+                        <td class="text-start">{!! Str::words($service->body, 100, '...') !!}</td>
+                        <td class="text-end">{{ Helper::getServicePrice($service) }}</td>
                         <td class="text-start">{{ $service->category->title }}</td>
                         <td class="text-start">{{ $service->category->sphere->title }}</td>
                         <td class="text-end">
@@ -50,7 +53,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="6">
+                        <td colspan="7">
                             <div class="text-center p-2 mb-2 bg-secondary bg-gradient text-white rounded">{{ __('Услуги отсутствуют') }}</div>
                         </td>
                     </tr>

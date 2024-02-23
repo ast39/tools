@@ -1,5 +1,5 @@
 @php
-
+    use App\Http\Libs\Helper;
 @endphp
 
 @extends('admin.layouts.app')
@@ -20,6 +20,10 @@
                     <tr>
                         <th class="text-start">{{ __('Описание') }}</th>
                         <td class="text-end">{{ $service->body }}</a></td>
+                    </tr>
+                    <tr>
+                        <th class="text-start">{{ __('Цена') }}</th>
+                        <td class="text-end">{{ Helper::getServicePrice($service) }}</a></td>
                     </tr>
                     <tr>
                         <th class="text-start">{{ __('Категория') }}</th>
