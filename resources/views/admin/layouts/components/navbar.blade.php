@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm newdesign-nav">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ url('/admin') }}">
             <img class="me-2 mb-2" style="margin-top: 10px" src="{{ asset('/images/logo.png') }}" width="30" height="30" />
             <span style="font-size: 1.2rem">{{ Auth::check() ? Auth::user()->name : config('app.name', 'Laravel') }}</span>
         </a>
