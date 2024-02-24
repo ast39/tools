@@ -18,24 +18,134 @@ class PlumberSeed extends Seeder
     {
         $master = Sphere::create(['title' => 'Сантехник'])->id;
 
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Биде'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Ванна'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Водяные счетчики'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Водяные фильтры'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Гигиенический душ'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Джакузи'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Душевая кабина'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Инсталляция'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Мойка'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Отопление'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Полотенцесушитель'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Разводка канализации'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Разводка труб'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Раковина'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Сантехник'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Смеситель'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Унитаз'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Устранение засоров'])->id;
-        $cat = Category::create(['sphere_id' => $master, 'title' => 'Устранение течи'])->id;
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Биде',
+            'body' => 'Комфортное проживание в каждом доме оценивается не только по виду из окна. Наличие просторного, технически
+            оснащенного, санузла – вот основной критерий для городского жителя. Необходимым дополнением к стандартному оборудованию
+            туалета уже давно является биде. Если же постройка изначально не была оборудована этим сантехническим устройством,
+            то стоит задуматься о его установке и вызвать мастера.',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Ванна',
+            'body' => 'Ванная комната, к счастью уже давно не роскошь, а насущная необходимость в каждом жилище. И, конечно,
+            солирует в ней собственно ванна. Мы предлагаем свои услуги по установке сантехнического оборудования.',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Водяные счетчики',
+            'body' => 'Установку учетно-измерительных приборов на узел подачи воды целесообразно производить только в тех помещениях,
+            коммуникации которых подключены к централизованным водопроводным сетям.
+            Вызывать мастера установщика можно только после согласования проекта в местном водоканале. Для этого нужно предоставить
+            в организацию определенный пакет документов, в том числе и технический паспорт устанавливаемого прибора.',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Водяные фильтры',
+            'body' => 'Водопроводная вода содержит в себе множество примесей, которые могут оказать пагубное влияние на организм человека.
+            Иногда в домашний чайник может попасть не только песок, но и целые куски ржавчины из труб. К счастью, проблем со здоровьем
+            можно избежать, установив у себя дома хороший фильтр воды.',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Гигиенический душ',
+            'body' => 'Предназначение гигиенического душа – это дешево продублировать функции биде. В небольшой туалетной комнате
+            бывает недостаточно места для установки всего сантехнического оборудования. В этом случае монтаж гигиенического душа
+            целесообразен по нескольким причинам:
+            экономия места;
+            установка без какой-либо проектной документации;
+            отсутствие дополнительных коммуникаций.',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Джакузи',
+            'body' => 'Прошли те времена, когда удобства в доме ограничивались тесным санузлом и небольшой ванной. Установить в
+            типовой квартире джакузи – мечта многих горожан. Однако такому сантехническому оборудованию требуются не только лишние
+            квадратные метры. Главное при этом, что установка – дело для профессионалов.',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Душевая кабина',
+            'body' => '',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Инсталляция',
+            'body' => '',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Мойка',
+            'body' => '',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Отопление',
+            'body' => '',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Полотенцесушитель',
+            'body' => '',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Разводка канализации',
+            'body' => '',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Разводка труб',
+            'body' => '',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Раковина',
+            'body' => '',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Сантехник',
+            'body' => '',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Смеситель',
+            'body' => '',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Унитаз',
+            'body' => '',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Устранение засоров',
+            'body' => '',
+        ])->id;
+
+        $cat = Category::create([
+            'sphere_id' => $master,
+            'title' => 'Устранение течи',
+            'body' => '',
+        ])->id;
     }
 }
