@@ -19,7 +19,7 @@
                     </tr>
                     <tr>
                         <th class="text-start">{{ __('Описание') }}</th>
-                        <td class="text-end">{{ $service->body }}</a></td>
+                        <td class="text-start">{{ $service->body }}</a></td>
                     </tr>
                     <tr>
                         <th class="text-start">{{ __('Цена') }}</th>

@@ -35,7 +35,7 @@
                     <tr>
                         <td class="text-center">{{ $loop->iteration }}</td>
                         <td class="text-start"><a class="text-primary" href="{{ route('admin.service.show', $service->id) }}">{{ $service->title }}</a></td>
-                        <td class="text-start">{!! Str::words($service->body, 100, '...') !!}</td>
+                        <td class="text-start">{{ Str::limit($service->body, 100, '...') }}</td>
                         <td class="text-end">{{ Helper::getServicePrice($service) }}</td>
                         <td class="text-start">{{ $service->category->title }}</td>
                         <td class="text-start">{{ $service->category->sphere->title }}</td>

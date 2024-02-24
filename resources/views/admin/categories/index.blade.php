@@ -1,5 +1,5 @@
 @php
-
+    use Illuminate\Support\Str;
 @endphp
 
 @extends('admin.layouts.app')
@@ -32,7 +32,7 @@
                     <tr>
                         <td class="text-center">{{ $loop->iteration }}</td>
                         <td class="text-start"><a class="text-primary" href="{{ route('admin.category.show', $category->id) }}">{{ $category->title }}</a></td>
-                        <td class="text-start">{!! $category->body !!}</td>
+                        <td class="text-start">{{ Str::limit($category->body, 100, '...') }}</td>
                         <td class="text-start">{{ $category->sphere->title }}</td>
                         <td class="text-end">
                             <form method="post" action="{{ route('admin.category.destroy', $category->id) }}" class="admin-table__nomargin">

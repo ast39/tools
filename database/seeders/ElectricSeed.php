@@ -16,7 +16,11 @@ class ElectricSeed extends Seeder
      */
     public function run(): void
     {
-        $master = Sphere::create(['title' => 'Электрик'])->id;
+        $master = Sphere::create([
+            'title' => 'Электрик',
+            'body' => 'Вы приобрели дорогую стильную люстру, и ее требуется правильно установить? Нужно провести
+            электропроводку в новостройке? Требуется поменять выключатель или розетку? Вызывайте мастера!',
+        ])->id;
 
 
         $cat = Category::create([
