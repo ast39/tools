@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SphereController;
 use App\Http\Controllers\Admin\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -44,3 +45,5 @@ Route::resource('services', ServiceController::class)
         'update' => 'admin.service.update',
         'destroy' => 'admin.service.destroy',
     ]);
+
+Auth::routes();
