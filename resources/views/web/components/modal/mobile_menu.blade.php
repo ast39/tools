@@ -1,21 +1,21 @@
 <div class="popupBox mobilePopupBox">
     <div class="popupClose"></div>
-    
+
     <div class="mobilePopupBox__content">
         <nav class="mobileNav">
             <ul class="mobileMenu">
                 @php $step = 0; @endphp
-                
+
                 @foreach(Cache::get('menu')->toArray() as $punct)
                     @php $step++; @endphp
-                    
+
                     <li class="menu-item menu-item-type-post_type menu-item-object-page {{ ((!empty($punct['categories']))? 'menu-item-has-children' : '') }}">
-                        <a href="{{ route('web.electrician.index') }}">{{ $punct['title'] }}</a>
-                        
+                        <a href="{{ route('web.sphere.show', $punct['slug'] ?? 'home') }}">{{ $punct['title'] }}</a>
+
                         @if(!empty($punct['categories']))
                             <ul class="sub-menu">
                                 @foreach($punct['categories'] as $cat)
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ route('web.electrician.index') }}">{{ $cat['title'] }}</a></li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ route('web.category.show', [$punct['slug'] ?? 'home', $cat['slug'] ?? 'home']) }}">{{ $cat['title'] }}</a></li>
                                 @endforeach
                             </ul>
                         @endif
@@ -23,7 +23,7 @@
                 @endforeach
             </ul>
         </nav>
-        
+
         <div class="mobileContacts mobileBlock">
             <ul class="mobileContactsList">
                 <li class="mobileContactsList__item">
@@ -34,9 +34,9 @@
                 <li class="mobileContactsList__item mobileContactsList__item_workHours">Круглосуточно</li>
             </ul>
         </div>
-        
+
         <a class="btn btn_medium btn_light btn_lightColor2 mobileBlock mobilePhoneBtn fancybox-inline" href="#popupOrder" target="_self">Оставить заявку</a>
-        
+
         <div class="mobileSocial mobileBlock">
             <ul class="social social_dark d-flex">
                 <li class="social__item social__item_vk"><a href="#" target="_blank" title="Вконтакте"></a></li>

@@ -69,12 +69,12 @@
                         @php $step++; @endphp
 
                         <li class="menu-item menu-item-type-post_type menu-item-object-page {{ ((!empty($punct['categories']))? 'menu-item-has-children' : '') }}">
-                            <a href="{{ route('web.electrician.index') }}">{{ $punct['title'] }}</a>
+                            <a href="{{ route('web.sphere.show', $punct['slug'] ?? 'home') }}">{{ $punct['title'] }}</a>
 
                             @if(!is_null($punct['categories']))
                                 <ul class="sub-menu {{ ((count($punct['categories']) > 10)? 'two' : '') }} {{ ((count(Cache::get('menu')->toArray())/2 < $step)? 'right' : '') }}">
                                     @foreach($punct['categories'] as $cat)
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ route('web.electrician.index') }}">{{ $cat['title'] }}</a></li>
+                                        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ route('web.category.show', [$punct['slug'] ?? 'home', $cat['slug'] ?? 'home']) }}">{{ $cat['title'] }}</a></li>
                                     @endforeach
                                 </ul>
                             @endif
@@ -87,24 +87,3 @@
 </div>
 
 @include('web/components/modal/mobile_menu')
-
-<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="{{ route('web.home') }}">Главная</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('web.electrician.index') }}">Электрика</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('web.plumber.index') }}">Сантехника</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('web.husband.index') }}">Муж на час</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('web.technical.index') }}">Ремонт техники</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('web.furniture.index') }}">Сборка мебели</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('web.apartment.index') }}">Ремонт квартир</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('web.carpenter.index') }}">Работа с деревом</a></li>
-
-            <li class="nav-item"><a class="nav-link" href="{{ route('web.services.index') }}">Наши услуги</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('web.reviews.index') }}">Отзывы клиентов</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('web.advantages.index') }}">Наши преимущества</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('web.contacts.index') }}">Наши контакты</a></li>
-        </ul>
-    </div>
-</nav>
--->
