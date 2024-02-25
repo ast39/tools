@@ -11,16 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('spheres', function (Blueprint $table) {
+        Schema::table('categories', function (Blueprint $table) {
             $table->string('slug')
                 ->after('title')
                 ->nullable()
                 ->comment('Транслит названия');
-
-            $table->tinyInteger('position')
-                ->after('active')
-                ->default(-1)
-                ->comment('Позиционирование списка');
         });
     }
 
@@ -29,9 +24,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('spheres', function (Blueprint $table) {
+        Schema::table('categories', function (Blueprint $table) {
             $table->dropColumn('slug');
-            $table->dropColumn('position');
         });
     }
 };

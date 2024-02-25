@@ -6,6 +6,7 @@ use App\Http\Traits\Filterable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Str;
 
 
 class Category extends Authenticatable {
@@ -51,6 +52,18 @@ class Category extends Authenticatable {
     }
 
 
+    public static function boot()
+    {
+        parent::boot();
+
+        self::saving(function ($model) {
+            if (empty($model->slug)) {
+                $model->slug = Str::slug($model->title, '-');
+            }
+        });
+    }
+
+
     protected $with = [
         //
     ];
@@ -65,7 +78,7 @@ class Category extends Authenticatable {
     ];
 
     protected $fillable = [
-        'id', 'sphere_id', 'title', 'body', 'active',
+        'id', 'sphere_id', 'title', 'slug', 'body', 'active',
         'created_at', 'updated_at',
     ];
 

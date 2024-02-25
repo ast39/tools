@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Http\Traits\Filterable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Str;
 
 
 class Sphere extends Authenticatable {
@@ -43,6 +44,18 @@ class Sphere extends Authenticatable {
     }
 
 
+    public static function boot()
+    {
+        parent::boot();
+
+        self::saving(function ($model) {
+            if (empty($model->slug)) {
+                $model->slug = Str::slug($model->title, '-');
+            }
+        });
+    }
+
+
     protected $with = [
         //
     ];
@@ -57,7 +70,7 @@ class Sphere extends Authenticatable {
     ];
 
     protected $fillable = [
-        'id', 'title', 'body', 'active', 'position',
+        'id', 'title', 'slug', 'body', 'active', 'position',
         'created_at', 'updated_at',
     ];
 

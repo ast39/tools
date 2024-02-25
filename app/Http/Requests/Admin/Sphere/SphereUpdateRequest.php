@@ -17,6 +17,11 @@ class SphereUpdateRequest extends FormRequest
         return true;
     }
 
+    protected function prepareForValidation() :void
+    {
+        //
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
