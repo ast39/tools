@@ -3,8 +3,8 @@
         <div class="sectionSupTitle">Чем мы занимаемся?</div>
         <div class="sectionTitle services__sectionTitle">Наши Услуги</div>
         
-        <div class="row">
-            <div class="col-xl-4 col-lg-6">
+        <div class="owl-carousel" data-owl_carousel="services">
+            <div class="owl-item">
                 <div class="serviceBox">
                     <div class="serviceBox__front">
                         <div class="serviceBox__icon d-flex align-items-center">
@@ -27,7 +27,7 @@
                 </div>
             </div>
             
-            <div class="col-xl-4 col-lg-6">
+            <div class="owl-item">
                 <div class="serviceBox">
                     <div class="serviceBox__front">
                         <div class="serviceBox__icon d-flex align-items-center">
@@ -50,7 +50,7 @@
                 </div> 
             </div>
             
-            <div class="col-xl-4 col-lg-6">
+            <div class="owl-item">
                 <div class="serviceBox">
                     <div class="serviceBox__front">
                         <div class="serviceBox__icon d-flex align-items-center">
@@ -73,7 +73,7 @@
                 </div> 
             </div>
             
-            <div class="col-xl-4 col-lg-6">
+            <div class="owl-item">
                 <div class="serviceBox">
                     <div class="serviceBox__front">
                         <div class="serviceBox__icon d-flex align-items-center">
@@ -97,7 +97,7 @@
                 </div> 
             </div>
             
-            <div class="col-xl-4 col-lg-6">
+            <div class="owl-item">
                 <div class="serviceBox">
                     <div class="serviceBox__front">
                         <div class="serviceBox__icon d-flex align-items-center">
@@ -121,7 +121,7 @@
                 </div> 
             </div>
             
-            <div class="col-xl-4 col-lg-6">
+            <div class="owl-item">
                 <div class="serviceBox">
                     <div class="serviceBox__front">
                         <div class="serviceBox__icon d-flex align-items-center">

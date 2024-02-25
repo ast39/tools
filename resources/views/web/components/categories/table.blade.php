@@ -1,4 +1,4 @@
-<section class="bigContacts">
+<section class="bigContacts" style="background-image: url('https://mastera-ryadom.ru/wp-content/uploads/2020/02/bg4.jpg');">
     <div class="bigContacts__content">
         <div class="container">
             <div class="row justify-content-xl-center">
@@ -33,5 +33,5 @@
         </div>
     </div>
     
-    <div class="contacts__bg" style="background-image: url('{{ asset('images/backgrounds/5.jpg') }}');"></div>
+	<div class="darkOverlay"></div>
 </section>

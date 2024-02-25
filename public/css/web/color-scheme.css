@@ -60,7 +60,9 @@ a, a:focus, input[type="checkbox"] + span a:hover, input[type="checkbox"] + span
 
 .callBtnMobile a:after{color: #fff; background: var(--color_s2);}
 
+.stickyNavWrp .container{background-color: var(--color_s1);}
 
+.sideInfoBox, .postContent table th {background-color: var(--color_s0);}
 
 
 
@@ -161,11 +163,6 @@ div.wpcf7 .promoForm__submit_light span.ajax-loader:before {
 .pages__current,
 .pages a:hover {
 	background-color: #4f61cc;
-}
-
-.sideInfoBox,
-.postContent table th {
-	background-color: #404b8d;
 }
 
 .sideTagsList__item a {

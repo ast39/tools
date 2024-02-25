@@ -27,7 +27,8 @@
           if (s.currentTop !== null) {
             s.stickyElement
               .css('position', '')
-              .css('top', '');
+              .css('top', '')
+              .removeClass('position-sticky');
             s.stickyElement.trigger('sticky-end', [s]).parent().removeClass(s.className);
             s.currentTop = null;
           }
@@ -43,7 +44,8 @@
           if (s.currentTop != newTop) {
             s.stickyElement
               .css('position', 'fixed')
-              .css('top', newTop);
+              .css('top', newTop)
+              .addClass('position-sticky');
 
             if (typeof s.getWidthFrom !== 'undefined') {
               s.stickyElement.css('width', $(s.getWidthFrom).width());

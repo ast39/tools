@@ -7,6 +7,8 @@ License https://dzen-design.ru/agreement
 */
 /**************************** FONTS *****************************/
 
+*, *:before, *:after{box-sizing: border-box;}
+
 @font-face {
   font-family: 'fa-custom';
   src: url('../../fonts/fa-custom/fa-custom.eot');
@@ -1092,11 +1094,7 @@ input[type='submit']:disabled {
 }
 
 .headerNav {
-	height: 7rem;
-/*	margin-bottom: -3.5em; */
-	border-radius: .6rem;
-	-webkit-box-shadow: 0 1rem 2.5rem 0 rgba(0,0,0,.2);
-			box-shadow: 0 1rem 2.5rem 0 rgba(0,0,0,.2);
+	height: 60px;
 	z-index: 100;
 }
 
@@ -1140,6 +1138,11 @@ input[type='submit']:disabled {
 	font: 600 1.4rem/3.2rem 'Montserrat', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: -0.02em;
+    text-align: center;
+    line-height: 17px;
+    display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex;
+    -webkit-align-items: center; -ms-flex-align: center; align-items: center;
+    -webkit-box-pack: center; -moz-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center;  justify-content: center;
 }
 
 .headerMenu > .menu-item-has-children > a:after {
@@ -1155,7 +1158,7 @@ input[type='submit']:disabled {
 
 .headerMenu .sub-menu {
 	position: absolute;
-	top: 5rem;
+	top: 45px;
 	left: 0;
 	width: 30rem;
 	padding: 1.5rem 0;
@@ -1173,6 +1176,11 @@ input[type='submit']:disabled {
 	border-radius: 0 0 .6rem .6rem;
 }
 
+.headerMenu .sub-menu.two{display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; width: 445px;}
+.headerMenu .sub-menu.two li{width: calc(100% / 2 - 20px); margin: 0 10px;}
+.headerMenu .sub-menu.two .menu-item > a{line-height: 1.3em;}
+.headerMenu .sub-menu.right{left: inherit; right: 0px;}
+
 .headerMenu > .menu-item:hover > .sub-menu,
 .headerMenu .sub-menu > .menu-item-has-children:hover > .sub-menu {
 	visibility: visible;
@@ -1182,6 +1190,10 @@ input[type='submit']:disabled {
 		 -o-transform: translateY(0);
 			transform: translateY(0);
 }
+
+section.services .owl-carousel .owl-item img{width: inherit;}
+section.services .owl-carousel{left: 0px; width: 100%;}
+section.services .owl-carousel .owl-stage-outer{padding: 40px 0; margin: -40px 0;}
 
 .headerMenu .sub-menu .menu-item > a {
 	display: block;
@@ -1419,7 +1431,7 @@ input[type='submit']:disabled {
 	max-width: 45rem;
 }
 
-.promoForm__bg, .testimonials__bg {
+.promoForm__bg, .testimonials__bg, .contacts__bg {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -2330,6 +2342,7 @@ input[type='submit']:disabled {
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     		background-size: cover;
+    background-color: var(--color_s6);
 }
 
 .bigContacts__content {
@@ -5129,15 +5142,11 @@ input[type='submit']:disabled {
 	
 }
 
-.stickyNavWrp {
-	width: 100%;
-	z-index: 1000;
-}
+.stickyNavWrp {width: 100%; z-index: 1000;}
+.stickyNavWrp .container{max-width: 100%; margin: 0 auto; -webkit-box-shadow: 0 1rem 2.5rem 0 rgba(0,0,0,.2); box-shadow: 0 1rem 2.5rem 0 rgba(0,0,0,.2); -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear; padding: 0px;}
+.stickyNavWrp.position-sticky .container{max-width: 1270px; margin: 0 auto; border-radius: 0 0 0.6rem 0.6rem;}
+.stickyNavWrp .headerNav{max-width: 1300px; margin: 0 auto; border-radius: 0 0 0.6rem 0.6rem;}
 
-.promoForm {
-	margin-top: -3.5rem;
-	padding-top: 3.5rem;
-}
 
 .breadcrumbs__content {
 	margin-top: -3.5rem;

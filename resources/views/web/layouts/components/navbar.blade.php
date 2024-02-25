@@ -56,11 +56,11 @@
 
     <div class="stickyNavWrp" style="">
         <div class="container">
-            <nav class="headerNav d-flex align-items-center justify-content-between">
+            <nav class="headerNav d-flex align-items-center justify-content-center">
                 <ul class="headerMenu d-flex">
                     <li id="menu-item-507" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-507">
                         <a href="https://mastera-ryadom.ru/elektrik/">Электрик</a>
-                        <ul class="sub-menu">
+                        <ul class="sub-menu two">
                             <li id="menu-item-537" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-537"><a href="https://mastera-ryadom.ru/elektrik/rozetka/">Розетка</a></li>
                             <li id="menu-item-538" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-538"><a href="https://mastera-ryadom.ru/elektrik/vyklyuchatel/">Выключатель</a></li>
                             <li id="menu-item-539" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-539"><a href="https://mastera-ryadom.ru/elektrik/svetilnik/">Светильники и Бра</a></li>
@@ -78,7 +78,7 @@
                     
                     <li id="menu-item-506" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-506">
                         <a href="https://mastera-ryadom.ru/santehnik/">Сантехник</a>
-                        <ul class="sub-menu">
+                        <ul class="sub-menu two">
                             <li id="menu-item-629" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-629"><a href="https://mastera-ryadom.ru/santehnik/ustranenie-techi/">Устранение течи</a></li>
                             <li id="menu-item-628" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-628"><a href="https://mastera-ryadom.ru/santehnik/ustranenie-zasorov/">Устранение засоров</a></li>
                             <li id="menu-item-618" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-567 current_page_item menu-item-618"><a href="https://mastera-ryadom.ru/santehnik/dushevaya-kabina/" aria-current="page">Душевая кабина</a></li>
@@ -112,7 +112,7 @@
                     <li id="menu-item-696" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-696"><a href="https://mastera-ryadom.ru/sborka-mebeli-2/">Сборка мебели</a></li>
                     
                     <li id="menu-item-694" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-694"><a href="https://mastera-ryadom.ru/otdelochnye-raboty/">Ремонт квартир</a>
-                        <ul class="sub-menu">
+                        <ul class="sub-menu right">
                             <li id="menu-item-647" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-647"><a href="https://mastera-ryadom.ru/muzh-na-chas/ukladka-napolnyh-pokrytij/">Укладка напольных покрытий</a></li>
                             <li id="menu-item-646" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-646"><a href="https://mastera-ryadom.ru/muzh-na-chas/malyarnye-shtukaturnye-raboty/">Малярные, штукатурные работы</a></li>
                         </ul>
