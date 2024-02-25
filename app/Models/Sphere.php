@@ -28,7 +28,8 @@ class Sphere extends Authenticatable {
      */
     public function categories(): HasMany
     {
-        return $this->hasMany(Category::class, 'sphere_id', 'id');
+        return $this->hasMany(Category::class, 'sphere_id', 'id')
+            ->with('services');
     }
 
 
