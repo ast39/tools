@@ -1,14 +1,26 @@
+@php
+    use Illuminate\Support\Facades\Cache;
+@endphp
+
+@foreach(Cache::get('menu') as $punct)
+    <div>
+        <h3>{{  $punct->title }}</h3>
+        <p>{!! $punct->body !!}</p>
+    </div>
+
+@endforeach
+
 <div class="headerInfo">
     <div class="container">
         <div class="row">
             <div class="col-8 col-sm-6 col-xl-3 col-lg-4">
                 <div class="headerInfo__block d-flex justify-content-xl-center align-items-center">
-                    <div class="mainPageTitle d-flex flex-wrap justify-content-xl-center align-items-center">       
+                    <div class="mainPageTitle d-flex flex-wrap justify-content-xl-center align-items-center">
                         <span class="siteLogo">
                             <a href="/">
                                 <img src="https://mastera-ryadom.ru/wp-content/uploads/2019/12/logo-100x100.png" alt="Мастера рядом">
                             </a>
-                        </span>		
+                        </span>
 
                         <span class="siteLogoText">
                             <a href="/">
@@ -44,10 +56,10 @@
                         <div class="headerPhoneText color_gray">
                             <a href="https://api.whatsapp.com/send?phone=74957774049"><div class="vlign-middle"><span>Напишите нам в WhatsApp!</span> <img src="https://mastera-ryadom.ru/wp-content/uploads/2020/10/wa-ico.png" width="30"></div></a>
                         </div>
-                        
-                        <div class="headerPhoneNumber"><a href="tel:8 (495)777-40-49">8 (495)777-40-49</a></div> 
+
+                        <div class="headerPhoneNumber"><a href="tel:8 (495)777-40-49">8 (495)777-40-49</a></div>
                     </div>
-                    
+
                     <a class="btn btn_medium btn_dark headerPhoneBtn fancybox-inline" href="#popupOrder" target="_self">Оставить заявку</a>
                 </div>
             </div>
@@ -75,7 +87,7 @@
                             <li id="menu-item-560" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-560"><a href="https://mastera-ryadom.ru/elektrik/shtroblenie-sten/">Штробление стен</a></li>
                         </ul>
                     </li>
-                    
+
                     <li id="menu-item-506" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-506">
                         <a href="https://mastera-ryadom.ru/santehnik/">Сантехник</a>
                         <ul class="sub-menu two">
@@ -99,25 +111,25 @@
                             <li id="menu-item-623" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-623"><a href="https://mastera-ryadom.ru/santehnik/razvodka-kanalizatsii/">Разводка канализации</a></li>
                         </ul>
                     </li>
-                    
+
                     <li id="menu-item-505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-505"><a href="https://mastera-ryadom.ru/muzh-na-chas/">Муж на час</a></li>
-                    
+
                     <li id="menu-item-649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-649"><a href="https://mastera-ryadom.ru/remont-bytovoj-tehniki/">Ремонт бытовой техники</a>
                         <ul class="sub-menu">
                             <li id="menu-item-650" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-650"><a href="https://mastera-ryadom.ru/muzh-na-chas/ustanovka-bytovoj-tehniki/">Установка бытовой техники</a></li>
                             <li id="menu-item-648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-648"><a href="https://mastera-ryadom.ru/muzh-na-chas/ustanovka-i-remont-tv/">Установка и ремонт TV</a></li>
                         </ul>
                     </li>
-                    
+
                     <li id="menu-item-696" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-696"><a href="https://mastera-ryadom.ru/sborka-mebeli-2/">Сборка мебели</a></li>
-                    
+
                     <li id="menu-item-694" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-694"><a href="https://mastera-ryadom.ru/otdelochnye-raboty/">Ремонт квартир</a>
                         <ul class="sub-menu right">
                             <li id="menu-item-647" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-647"><a href="https://mastera-ryadom.ru/muzh-na-chas/ukladka-napolnyh-pokrytij/">Укладка напольных покрытий</a></li>
                             <li id="menu-item-646" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-646"><a href="https://mastera-ryadom.ru/muzh-na-chas/malyarnye-shtukaturnye-raboty/">Малярные, штукатурные работы</a></li>
                         </ul>
                     </li>
-                    
+
                     <li id="menu-item-2388" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2388"><a href="https://mastera-ryadom.ru/muzh-na-chas/plotnitskie-raboty/">Плотник</a></li>
                 </ul>
             </nav>
