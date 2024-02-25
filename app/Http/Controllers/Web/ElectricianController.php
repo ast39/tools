@@ -24,7 +24,6 @@ class ElectricianController extends Controller {
      */
     public function index(): View
     {
-        echo Str::slug('Монтаж счетчика электроэнергии', '-', 'en');
         $categories = Category::with('services')
             ->where('sphere_id', 1)
             ->orderBy('id')
@@ -35,8 +34,10 @@ class ElectricianController extends Controller {
         ]);
     }
 
-    public function show(int $id): View
+    public function show(string $slug): View
     {
+        $id = $this->getIdBySlug(new Category(), $slug);
+
         $category = Category::with('services')
             ->where('id', $id)
             ->orderBy('id')

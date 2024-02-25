@@ -17,33 +17,37 @@ use Illuminate\Support\Facades\Route;
 # Страница по дефолту - Main page
 Route::get('/', HomeController::class)->name('web.home');
 
-# Раздел электрики в верхнем меню (общий и просмотр категорий с услугами и прайсом)
-Route::get('electrician', [ElectricianController::class, 'index'])->name('web.electrician.index');
-Route::get('electrician/{id}', [ElectricianController::class, 'show'])->name('web.electrician.show');
+Route::group(['prefix' => 'catalog'], function() {
 
-# Раздел электрики в верхнем меню (общий и просмотр категорий с услугами и прайсом)
-Route::get('plumber', [PlumberController::class, 'index'])->name('web.plumber.index');
-Route::get('plumber/{id}', [PlumberController::class, 'show'])->name('web.plumber.show');
+    # Раздел электрики в верхнем меню (общий и просмотр категорий с услугами и прайсом)
+    Route::get('electrician', [ElectricianController::class, 'index'])->name('web.electrician.index');
+    Route::get('electrician/{slug}', [ElectricianController::class, 'show'])->name('web.electrician.show');
 
-# Раздел электрики в верхнем меню (общий и просмотр категорий с услугами и прайсом)
-Route::get('husband', [HusbandController::class, 'index'])->name('web.husband.index');
-Route::get('husband/{id}', [HusbandController::class, 'show'])->name('web.husband.show');
+    # Раздел сантехники в верхнем меню (общий и просмотр категорий с услугами и прайсом)
+    Route::get('plumber', [PlumberController::class, 'index'])->name('web.plumber.index');
+    Route::get('plumber/{id}', [PlumberController::class, 'show'])->name('web.plumber.show');
 
-# Раздел электрики в верхнем меню (общий и просмотр категорий с услугами и прайсом)
-Route::get('technical', [TechnicalController::class, 'index'])->name('web.technical.index');
-Route::get('technical/{id}', [TechnicalController::class, 'show'])->name('web.technical.show');
+    # Раздел Муж на час в верхнем меню (общий и просмотр категорий с услугами и прайсом)
+    Route::get('husband', [HusbandController::class, 'index'])->name('web.husband.index');
+    Route::get('husband/{id}', [HusbandController::class, 'show'])->name('web.husband.show');
 
-# Раздел электрики в верхнем меню (общий и просмотр категорий с услугами и прайсом)
-Route::get('furniture', [FurnitureController::class, 'index'])->name('web.furniture.index');
-Route::get('furniture/{id}', [FurnitureController::class, 'show'])->name('web.furniture.show');
+    # Раздел ремонта техники в верхнем меню (общий и просмотр категорий с услугами и прайсом)
+    Route::get('technical', [TechnicalController::class, 'index'])->name('web.technical.index');
+    Route::get('technical/{id}', [TechnicalController::class, 'show'])->name('web.technical.show');
 
-# Раздел электрики в верхнем меню (общий и просмотр категорий с услугами и прайсом)
-Route::get('apartment', [ApartmentController::class, 'index'])->name('web.apartment.index');
-Route::get('apartment/{id}', [ApartmentController::class, 'show'])->name('web.apartment.show');
+    # Раздел сборки мебели в верхнем меню (общий и просмотр категорий с услугами и прайсом)
+    Route::get('furniture', [FurnitureController::class, 'index'])->name('web.furniture.index');
+    Route::get('furniture/{id}', [FurnitureController::class, 'show'])->name('web.furniture.show');
 
-# Раздел электрики в верхнем меню (общий и просмотр категорий с услугами и прайсом)
-Route::get('carpenter', [CarpenterController::class, 'index'])->name('web.carpenter.index');
-Route::get('carpenter/{id}', [CarpenterController::class, 'show'])->name('web.carpenter.show');
+    # Раздел ремонта квартир в верхнем меню (общий и просмотр категорий с услугами и прайсом)
+    Route::get('apartment', [ApartmentController::class, 'index'])->name('web.apartment.index');
+    Route::get('apartment/{id}', [ApartmentController::class, 'show'])->name('web.apartment.show');
+
+    # Раздел плотничества в верхнем меню (общий и просмотр категорий с услугами и прайсом)
+    Route::get('carpenter', [CarpenterController::class, 'index'])->name('web.carpenter.index');
+    Route::get('carpenter/{id}', [CarpenterController::class, 'show'])->name('web.carpenter.show');
+
+});
 
 # Раздел "Наши услуги"
 Route::get('services', [ServicesController::class, 'index'])->name('web.services.index');
