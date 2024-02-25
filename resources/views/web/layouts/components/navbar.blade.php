@@ -64,14 +64,14 @@
             <nav class="headerNav d-flex align-items-center justify-content-center">
                 <ul class="headerMenu d-flex">
                     @php $step = 0; @endphp
-                        
+
                     @foreach(Cache::get('menu')->toArray() as $punct)
                         @php $step++; @endphp
-                    
+
                         <li class="menu-item menu-item-type-post_type menu-item-object-page {{ ((!empty($punct['categories']))? 'menu-item-has-children' : '') }}">
                             <a href="{{ route('web.electrician.index') }}">{{ $punct['title'] }}</a>
-                            
-                            @if(!empty($punct['categories']))
+
+                            @if(!is_null($punct['categories']))
                                 <ul class="sub-menu {{ ((count($punct['categories']) > 10)? 'two' : '') }} {{ ((count(Cache::get('menu')->toArray())/2 < $step)? 'right' : '') }}">
                                     @foreach($punct['categories'] as $cat)
                                         <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ route('web.electrician.index') }}">{{ $cat['title'] }}</a></li>
