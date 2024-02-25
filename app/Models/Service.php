@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Http\Traits\Filterable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Str;
 
 
 class Service extends Authenticatable {
@@ -33,6 +34,18 @@ class Service extends Authenticatable {
     }
 
 
+    public static function boot()
+    {
+        parent::boot();
+
+        self::saving(function ($model) {
+            if (empty($model->slug)) {
+                $model->slug = Str::slug($model->title, '-');
+            }
+        });
+    }
+
+
     protected $with = [
         //
     ];
@@ -47,7 +60,7 @@ class Service extends Authenticatable {
     ];
 
     protected $fillable = [
-        'id', 'category_id', 'title', 'body', 'price', 'unit', 'from', 'favorite', 'active',
+        'id', 'category_id', 'title', 'slug', 'body', 'price', 'unit', 'from', 'favorite', 'active',
         'created_at', 'updated_at',
     ];
 

@@ -57,7 +57,7 @@ class Sphere extends Authenticatable {
     ];
 
     protected $fillable = [
-        'id', 'title', 'body', 'active',
+        'id', 'title', 'body', 'active', 'position',
         'created_at', 'updated_at',
     ];
 

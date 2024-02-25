@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Admin\Controller;
 use App\Http\Traits\Dictionarable;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 
@@ -23,6 +24,7 @@ class ElectricianController extends Controller {
      */
     public function index(): View
     {
+        echo Str::slug('Монтаж счетчика электроэнергии', '-', 'en');
         $categories = Category::with('services')
             ->where('sphere_id', 1)
             ->orderBy('id')
