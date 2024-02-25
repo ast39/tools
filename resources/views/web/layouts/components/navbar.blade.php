@@ -1,5 +1,6 @@
 @php
     use Illuminate\Support\Facades\Cache;
+    use App\Http\Libs\Helper;
 @endphp
 
 @foreach(Cache::get('menu') as $punct)
@@ -7,7 +8,18 @@
         <h3>{{  $punct->title }}</h3>
         <p>{!! $punct->body !!}</p>
     </div>
-
+    <hr />
+    @foreach($punct->categories as $cat)
+        <div>
+            <h3>{{  $cat->title }}</h3>
+            <p>{!! $cat->body !!}</p>
+        </div>
+        @foreach($cat->services as $service)
+            <div>
+                <p>{{  $service->title }} - {{ Helper::getServicePrice($service) }}</p>
+            </div>
+        @endforeach
+    @endforeach
 @endforeach
 
 <div class="headerInfo">
