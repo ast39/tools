@@ -8,27 +8,25 @@
 
 @section('content')
     <div class="pageBody">
-        <div class="breadcrumbs" style="background-image: url('https://mastera-ryadom.ru/wp-content/uploads/2019/12/bg9.jpg');">
-            <div class="breadcrumbs__content">
-                <div class="container">
-                    <div class="kama_breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-                        <span class="breadcrumbs__link" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="https://mastera-ryadom.ru" itemprop="item"><span itemprop="name">Главная</span></a></span>
-                        <span class="breadcrumbs__sep"></span>
-                        <span class="breadcrumbs__title">Электрик</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="darkOverlay"></div>
-        </div>
-        
         <div class="pageContent">
-            <div class="container" id="h1">
-                <h1 class="pageTitle"><font size="5">Электрик</font></h1>
-                
+            <div class="container">
                 <div class="row" id="content">		
                     <div class="col-xl-9 order-xl-2">
                         <main class="mainbar mainbar_offset_left mainbar_offset_bottom">
+                            <div class="breadcrumbs">
+                                <div class="breadcrumbs__content">
+                                    <div class="kama_breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                                        <span class="breadcrumbs__link"><a href="#">Главная</a></span>
+                                        <span class="breadcrumbs__sep"></span>
+                                        <span class="breadcrumbs__link"><a href="#">Муж на час</a></span>
+                                        <span class="breadcrumbs__sep"></span>
+                                        <span class="breadcrumbs__title">Электрик</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h1 class="pageTitle">Электрик</h1>
+
                             <article class="postContent postContent_article">
 
                                 <p><img loading="lazy" class="wp-image-1777 alignright" src="https://mastera-ryadom.ru/wp-content/uploads/2020/12/026de1318c03a3d2ed99392e79987d4f2a351d04-e1613510893467.jpg" alt="" width="394" height="335" srcset="https://mastera-ryadom.ru/wp-content/uploads/2020/12/026de1318c03a3d2ed99392e79987d4f2a351d04-e1613510893467.jpg 937w, https://mastera-ryadom.ru/wp-content/uploads/2020/12/026de1318c03a3d2ed99392e79987d4f2a351d04-e1613510893467-118x100.jpg 118w" sizes="(max-width: 394px) 100vw, 394px"></p>

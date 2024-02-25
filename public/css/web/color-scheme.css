@@ -64,6 +64,9 @@ a, a:focus, input[type="checkbox"] + span a:hover, input[type="checkbox"] + span
 
 .sideInfoBox, .postContent table th {background-color: var(--color_s0);}
 
+.breadcrumbs__content{color: var(--color_s9);}
+.breadcrumbs a, .breadcrumbs a:focus{color: var(--color_s9);}
+
 
 
 
