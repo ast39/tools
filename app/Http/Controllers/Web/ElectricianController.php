@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Admin\Controller;
 use App\Http\Traits\Dictionarable;
 use App\Models\Category;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 
 
