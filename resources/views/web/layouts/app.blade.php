@@ -10,6 +10,10 @@
 
         <title>@yield('title')</title>
 
+        @php
+            include_once public_path() . '/images/site_sprite.svg';
+        @endphp
+
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic" rel="stylesheet">
         
@@ -25,22 +29,22 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/web/jivo/widget.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/web/jivo/omnichannelMenu.widget.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/web/jivo/chatcontainer.widget.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/web/app_mastera.css') }}">
     </head>
     
     <body>
-        <div id="app" class="page-body">
-
+        <div class="ms-body">
             {{-- Навигация --}}
             @include('web.layouts.components.navbar')
 
             @yield('content')
+                
+            {{-- Footer --}}
+            @include('web.layouts.components.footer')
+            
+            {{-- Modal --}}
+            @include('web.components.modal.order')
         </div>
-
-        {{-- Footer --}}
-        @include('web.layouts.components.footer')
-        
-        {{-- Modal --}}
-        @include('web.components.modal.order')
 
         <script>
             var token = '{{ csrf_token() }}';
@@ -66,6 +70,7 @@
         <script type="text/javascript" src="https://mastera-ryadom.ru/wp-content/plugins/easy-fancybox/js/jquery.easing.min.js?ver=1.4.1" id="jquery-easing-js"></script>
         <script type="text/javascript" src="{{ asset('js/web/custom-main-page.min.js?v=' . time()) }}"></script>
         <script type="text/javascript" src="https://mastera-ryadom.ru/wp-includes/js/wp-embed.min.js?ver=5.7.11" id="wp-embed-js"></script>
+        <script type="text/javascript" src="{{ asset('js/web/app_mastera.js?v=' . time()) }}"></script>
         
         <script type="text/javascript" src="{{ asset('js/web/sticky.js?v=' . time()) }}"></script>
     </body>
