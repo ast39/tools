@@ -78,7 +78,7 @@
 .ms-review__block__data__one{margin-right: 20px; color: var(--color_s15); font-size: 18px; line-height: 24px; font-weight: 400; white-space: nowrap;}
 .ms-review__block__data__one:last-child{margin-right: 0px;}
 .ms-review__block__data__one.star{display: flex; align-items: center;}
-.ms-review__block__data__one.star svg{display: block; fill: #F2A156; width: 23px; height: 23px; margin-right: 3px;}
+.ms-review__block__data__one.star svg{display: block; fill: #fae348; width: 23px; height: 23px; margin-right: 3px;}
 .ms-review__block__data__one.star svg:last-child{margin-right: 0px;}
 .ms-review__send{width: 100%; max-width: 510px; margin: 0 auto; margin-top: 25px;}
 
@@ -130,11 +130,42 @@ a.ms-contact__text:hover{color: var(--color_s1);}
 .popup-star{display: flex; justify-content: center; align-items: center; margin-bottom: 15px;}
 .popup-star__one{display: flex; align-items: center; margin-right: 20px;}
 .popup-star__one:last-child{margin-right: 0px;}
-.popup-star__ico{margin-right: 10px; opacity: 0.5; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear; cursor: pointer;}
+.popup-star__ico{margin-right: 10px; opacity: 0.3; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear; cursor: pointer;}
 .popup-star__ico:last-child{margin-right: 0px;}
 .popup-star__ico.active{opacity: 1;}
-.popup-star__ico svg{display: block; width: 30px; height: 30px; fill: #F2A156;}
+.popup-star__ico svg{display: block; width: 30px; height: 30px; fill: #fae348;}
 .popup-star__num{font-size: 30px; line-height: 30px;}
+
+.ms-employees{padding: 60px 0; background-color: var(--color_s13);}
+.ms-employees__wrapper{}
+.ms-employees__block{font: 400 1.6rem / 1.875 'Montserrat', sans-serif;}
+.ms-employees__block__one{background: #fff; border-radius: .6rem; overflow: hidden;}
+.ms-employees__poster{display: flex; align-self: stretch;}
+.ms-employees__poster__one{}
+.ms-employees__poster__one:nth-child(1){background-image: var(--background-image); background-size: cover; width: 100%; height: 235px; background-position: center;}
+.ms-employees__poster__one:nth-child(2){background: var(--color_s1); display: flex; justify-content: center; align-items: center; flex-direction: column; min-width: 135px; max-width: 135px; padding: 20px; text-align: center;}
+.ms-employees__experience__one{ margin-bottom: 10px; font-size: 10px; line-height: 12px;}
+.ms-employees__experience__one:last-child{margin-bottom: 0px;}
+.ms-employees__experience__one b{font-size: 32px; display: block; line-height: 32px; margin-bottom: 3px;}
+.ms-employees__content{padding: 20px;}
+.ms-employees__name{font-size: 24px; font-weight: bold;}
+.ms-employees__table{}
+.ms-employees__line{display: flex; justify-content: space-between; border-bottom: 1px solid #e6e6e6; padding-bottom: 5px; margin-bottom: 5px;}
+.ms-employees__line__one{}
+.ms-employees__line__one:last-child{}
+.ms-employees__info{}
+.ms-employees__info__desc{}
+.ms-employees__info__text{}
+.ms-employees .desc{font-size: 12px; padding-top: 5px;}
+.ms-employees .text{}
+.ms-employees__block .owl-stage{display: flex; align-self: stretch;}
+.ms-employees__block .owl-item{display: flex; align-self: stretch;}
+
+.ms-video{padding: 60px 0; background-color: #f5f5f5; background-position: center; background-repeat: no-repeat; background-size: cover;}
+.ms-video__wrapper__one{width: 100%; border-radius: .6rem; box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,.05); overflow: hidden;}
+.ms-video__text{text-align: center; background: #fff; padding: 10px; font: 400 1.6rem / 1.875 'Montserrat', sans-serif;}
+.ms-video__wrapper .owl-stage{display: flex; align-self: stretch;}
+.ms-video__wrapper .owl-item{display: flex; align-self: stretch;}
 
 @media screen and (max-width: 1200px) {
     .ms-advantageb__one{width: calc(100% / 2 - 20px);}
@@ -188,6 +219,22 @@ a.ms-contact__text:hover{color: var(--color_s1);}
     .ms-footer__logo svg{margin: 0 auto;}
     .ms-footer__menu{flex-wrap: wrap; justify-content: center; margin: -20px;}
     .ms-footer__menu__one{margin: 20px; width: calc(100% / 3 - 40px);}
+    
+    .ms-employees{padding: 40px 0;}
+    
+    .ms-video{padding: 40px 0;}
+    .ms-video__wrapper .owl-item{display: flex; align-self: stretch; float: inherit; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear; margin: 0px 1px 0 5px;}
+}
+
+@media screen and (max-width: 750px) {
+    .ms-employees__block .owl-item{display: flex; align-self: stretch; float: inherit; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear; margin: 0px 1px 0 5px;}
+    .ms-employees__block .owl-item.center{}
+    .ms-employees__line{display: block;}
+    .ms-employees__poster__one:nth-child(1){height: 145px;}
+    .ms-employees__poster__one:nth-child(2){padding: 10px;}
+    .ms-employees__experience__one b{font-size: 25px; line-height: 25px;}
+    .ms-employees__name{font-size: 18px;}
+    .ms-employees .text{font-size: 14px;}
 }
 
 @media screen and (max-width: 650px) {

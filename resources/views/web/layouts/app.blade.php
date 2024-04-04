@@ -71,6 +71,7 @@
         <script type="text/javascript" src="https://mastera-ryadom.ru/wp-content/plugins/easy-fancybox/js/jquery.easing.min.js?ver=1.4.1" id="jquery-easing-js"></script>
         <script type="text/javascript" src="{{ asset('js/web/custom-main-page.min.js?v=' . time()) }}"></script>
         <script type="text/javascript" src="https://mastera-ryadom.ru/wp-includes/js/wp-embed.min.js?ver=5.7.11" id="wp-embed-js"></script>
+        <script type="text/javascript" src="{{ asset('/js/jwplayer-7.4.2/jwplayerwithkey_v2.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/web/app_mastera.js?v=' . time()) }}"></script>
         
         <script type="text/javascript" src="{{ asset('js/web/sticky.js?v=' . time()) }}"></script>

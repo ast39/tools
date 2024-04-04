@@ -109,8 +109,7 @@ $(function() {
         if($('[data-init_video]').length > 0){
             $('[data-init_video]').each(function(i){
                 let block = $(this),
-                    block_video = block.data('video'),
-                    block_poster = block.data('poster');
+                    block_video = block.data('video');
                     
                 if(typeof block.attr('id') === 'undefined'){ block.attr('id', 'player_' + i); }
                 
@@ -119,8 +118,8 @@ $(function() {
                 player_list[video_id] = jwplayer(video_id).setup({
                     responsive: true,
                     aspectratio: "16:9",
-                    image: block_poster,
-                    file: block_video,
+                    image: 'https://img.youtube.com/vi/' + block.data('video') + '/maxresdefault.jpg',
+                    file: 'https://www.youtube.com/watch?v=' + block.data('video'),
                     stretching: 'fill'
                 });
             });

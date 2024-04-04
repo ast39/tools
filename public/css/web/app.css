@@ -1191,7 +1191,7 @@ input[type='submit']:disabled {
 }
 
 section.services .owl-carousel .owl-item img{width: inherit;}
-section.services .owl-carousel{left: 0px; width: 100%;}
+section.services .owl-carousel, .ms-review__block, .ms-employees__block, .ms-video__wrapper{left: 0px; width: 100%;}
 
 .headerMenu .sub-menu .menu-item > a {
 	display: block;
@@ -1425,7 +1425,7 @@ section.services .owl-carousel{left: 0px; width: 100%;}
 	max-width: 45rem;
 }
 
-.promoForm__bg, .testimonials__bg, .contacts__bg {
+.promoForm__bg, .testimonials__bg, .contacts__bg, .ms-employees__bg {
 	position: absolute;
 	top: 0;
 	left: 0;
