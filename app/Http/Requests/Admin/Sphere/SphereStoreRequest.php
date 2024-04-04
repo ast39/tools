@@ -4,6 +4,7 @@ namespace App\Http\Requests\Admin\Sphere;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
 
 
 class SphereStoreRequest extends FormRequest
@@ -18,7 +19,9 @@ class SphereStoreRequest extends FormRequest
 
     protected function prepareForValidation() :void
     {
-        //
+        $this->merge([
+            'slug' => Str::slug($this->title),
+        ]);
     }
 
     /**
@@ -31,6 +34,7 @@ class SphereStoreRequest extends FormRequest
         return [
 
             'title' => ['required', 'string', 'unique:spheres,title'],
+            'slug' => ['required', 'string', 'unique:spheres,slug'],
             'body' => ['string'],
             'active' => ['integer', 'in:0,1'],
         ];

@@ -4,6 +4,7 @@ namespace App\Http\Requests\Admin\Category;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
 
 
 class CategoryStoreRequest extends FormRequest
@@ -18,7 +19,9 @@ class CategoryStoreRequest extends FormRequest
 
     protected function prepareForValidation() :void
     {
-        //
+        $this->merge([
+            'slug' => Str::slug($this->title),
+        ]);
     }
 
     /**
@@ -32,6 +35,7 @@ class CategoryStoreRequest extends FormRequest
 
             'sphere_id' => ['required', 'integer', 'exists:spheres,id'],
             'title' => ['required', 'string', 'unique:categories,title'],
+            'slug' => ['required', 'string', 'unique:categories,slug'],
             'body' => ['string'],
             'active' => ['integer', 'in:0,1'],
         ];
