@@ -4,6 +4,7 @@ namespace App\Http\Requests\Admin\Sphere;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 
@@ -19,7 +20,11 @@ class SphereUpdateRequest extends FormRequest
 
     protected function prepareForValidation() :void
     {
-        //
+        if (!is_null($this->title)) {
+            $this->merge([
+                'slug' => Str::slug($this->title),
+            ]);
+        }
     }
 
     /**
@@ -32,6 +37,7 @@ class SphereUpdateRequest extends FormRequest
         return [
 
             'title' => ["string", Rule::unique('spheres', 'title')->ignore($this->sphere)],
+            'slug' => ["string", Rule::unique('spheres', 'slug')->ignore($this->sphere)],
             'body' => ['string'],
             'active' => ['integer', 'in:0,1'],
         ];

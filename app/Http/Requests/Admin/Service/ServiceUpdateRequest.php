@@ -22,7 +22,11 @@ class ServiceUpdateRequest extends FormRequest
 
     protected function prepareForValidation() :void
     {
-        //
+        if (!is_null($this->title)) {
+            $this->merge([
+                'slug' => Str::slug($this->title),
+            ]);
+        }
     }
 
     /**
@@ -37,6 +41,7 @@ class ServiceUpdateRequest extends FormRequest
             'sphere_id' => ['integer', 'exists:spheres,id'],
             'category_id' => ['integer', 'exists:categories,id'],
             'title' => ["string", Rule::unique('services', 'title')->ignore($this->service)],
+            'slug' => ["string", Rule::unique('services', 'slug')->ignore($this->service)],
             'body' => ['string'],
             'price' => ['regex:/^\d+(\.\d{1,2})?$/'],
             'from' => ['integer', 'in:0,1'],
