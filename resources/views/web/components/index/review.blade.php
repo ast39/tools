@@ -58,6 +58,8 @@
                         </div>
                     @endforeach
                 </div>
+                
+                <div class="ms-review__send"><a class="btn btn_big btn_light btn_lightColor2 btn_submit fancybox-inline" href="#popupComment" target="_self">{{ __('Оставить отзыв') }} <span class="btn__blick"></span></a></div>
             </div>
         </div>
     </div>

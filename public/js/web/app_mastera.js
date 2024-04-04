@@ -28,7 +28,34 @@ $(function() {
         
         /* функция запуска слайдеров */
         funcInitSlider();
+        
+        /* функция выборки рейтинга */
+        funcStarRate();
     });
+    
+    /* ------------------------- функция выборки рейтинга ------------------------- */
+    function funcStarRate(){
+        if($('[data-star_content]').length > 0){
+            $('[data-star_content]').each(function(){ starRate($(this), parseFloat($(this).data('star_content'))); });
+        }
+        
+        $('body').on('click', '[data-star_one]', function(){ starRate($(this).parents('[data-star_content]'), parseFloat($(this).data('star_one'))); });
+        
+        function starRate(content, rate){
+            content.find('input').val(rate);
+            content.find('[data-star_num]').html(rate);
+            content.find('[data-star_one]').removeClass('active');
+            
+            content.find('[data-star_one]').each(function(){
+                let block = $(this),
+                    rate_one = parseFloat(block.data('star_one'));
+                    
+                if(rate_one <= rate){
+                    block.addClass('active');
+                }
+            });
+        }
+    }
     
     /* ------------------------- функция запуска слайдеров ------------------------- */
     function funcInitSlider(){

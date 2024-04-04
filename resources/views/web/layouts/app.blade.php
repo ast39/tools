@@ -44,6 +44,7 @@
             
             {{-- Modal --}}
             @include('web.components.modal.order')
+            @include('web.components.modal.comment')
         </div>
 
         <script>
