@@ -18,13 +18,12 @@
 .ms-header__phone__one__social.phone svg{}
 .ms-header__phone__one__social.whatsapp svg{}
 .ms-header__phone__one__social.logo{margin-right: 10px;}
-.ms-header__phone__one__social.logo svg{width: 42px; height: 42px; fill: var(--color_s5);}
+.ms-header__phone__one__social.logo svg{width: 42px; height: 42px; fill: var(--color_s2);}
 .ms-header__phone__one:hover svg {fill: var(--color_s0);}
-.ms-header__phone__one:hover .ms-header__phone__one__social.logo svg {fill: var(--color_s2);}
-.ms-header__menu__wrapper{display: none; margin-left: 10px; min-width: 42px; height: 42px; background: var(--color_s0); border-radius: .6rem; cursor: pointer;}
-.ms-header__menu__wrapper:hover, .ms-header__menu__wrapper.active{background: var(--color_s6);}
+.ms-header__phone__one:hover .ms-header__phone__one__social.logo svg {fill: var(--color_s0);}
+.ms-header__menu__wrapper{display: none; margin-left: 10px; min-width: 42px; height: 42px; background: var(--color_s2); border-radius: 50px; cursor: pointer;}
+.ms-header__menu__wrapper:hover, .ms-header__menu__wrapper.active{background: var(--color_s12);}
 .ms-header__menu{width: 24px; height: 24px; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear; fill: var(--color_s4); position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; margin: auto;}
-.ms-header__menu__wrapper:hover .ms-header__menu{width: 27px; height: 27px;}
 .ms-header__menu__wrapper.active .ms-header__menu{transform: rotate(90deg);}
 .ms-header__contact__one .btn{font-size: 12px; margin: 0px; height: inherit; line-height: 12px; padding: 15px;}
 
@@ -64,7 +63,7 @@
 .ms-advantage__ico__text{font-size: 18px; line-height: 22px;}
 
 /* Review - отзывы */
-.review{padding: 60px 0; background-color: var(--color_s6);}
+.review{padding: 60px 0; background-color: var(--color_s13);}
 .ms-review__wrapper{}
 .ms-review__desc{color: var(--color_s2); font-size: 18px; line-height: 26px; font-weight: 400; max-width: 450px; margin: 0 auto; width: 100%; margin-top: 10px; text-align: center;}
 .ms-review__block{margin-top: 60px;}
@@ -73,7 +72,7 @@
 .ms-review__block .owl-item.center{padding-top: 0px; opacity: 1;}
 .ms-review__block__one{padding: 40px; background: #fff; border-radius: .6rem; position: relative;}
 .ms-review__block__ico{margin-bottom: 40px;}
-.ms-review__block__ico svg{display: block; width: 55px; height: 39px;}
+.ms-review__block__ico svg{display: block; width: 55px; height: 39px; fill: var(--color_s2);}
 .ms-review__block__text{font: 400 1.6rem/1.875 'Montserrat', sans-serif; font-weight: 400; color: var(--color_s14); padding-bottom: 64px;}
 .ms-review__block__data{display: flex; align-items: center; justify-content: space-between; position: absolute; width: calc(100% - 80px); bottom: 40px;}
 .ms-review__block__data__one{margin-right: 20px; color: var(--color_s15); font-size: 18px; line-height: 24px; font-weight: 400; white-space: nowrap;}
@@ -92,16 +91,16 @@
 .ms-advantageb__text{margin-top: 10px; padding-top: 10px; position: relative;}
 .ms-advantageb__text:before{content: ''; width: 100px; position: absolute; height: 2px; background: var(--color_s2); top: 0px;}
 
-.ms-contact{background-position: center; background-repeat: no-repeat; -webkit-background-size: cover; background-size: cover; background-color: var(--color_s6); color: #fff; padding: 60px 0;}
+.ms-contact{background-position: center; background-repeat: no-repeat; -webkit-background-size: cover; background-size: cover; background-color: var(--color_s13); color: #fff; padding: 60px 0;}
 .ms-contact__wrapper{display: flex; justify-content: center; flex-wrap: wrap; margin: -40px;}
 .ms-contact__one{margin: 40px;  width: calc(100% / 4 - 80px);}
 .ms-contact__ico{}
-.ms-contact__ico i{display: block; width: 7rem; height: 7rem; margin: 0 auto 2.2rem; font: 2.6rem / 6.8rem 'fa-custom'; text-align: center; border-radius: 50%; border-width: .2rem; border-style: solid; color: var(--color_s2);}
+.ms-contact__ico i{display: block; width: 7rem; height: 7rem; margin: 0 auto 2.2rem; font: 2.6rem / 6.8rem 'fa-custom'; text-align: center; border-radius: 50%; border-width: .2rem; border-style: solid; color: var(--color_s1);}
 .ms-contact__text{font: 700 1.8rem / 1.67 'Montserrat', sans-serif; color: #fff; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear; text-align: center; display: block;}
-a.ms-contact__text:hover{color: var(--color_s2);}
+a.ms-contact__text:hover{color: var(--color_s1);}
 
 /* Footer - подвал сайта */
-.ms-footer{ padding: 60px 0; background: var(--color_s13);}
+.ms-footer{ padding: 60px 0;}
 .ms-footer__wrapper{display: grid; grid-gap: 40px; justify-content: space-between;}
 .ms-footer__wrapper__one{}
 .ms-footer__wrapper__one.flogo{grid-column: 1; grid-row: 1;}
@@ -200,7 +199,6 @@ a.ms-contact__text:hover{color: var(--color_s2);}
     .ms-header__contact__one .btn{font-size: 10px; padding: 10px;}
     .ms-header__menu__wrapper{min-width: 32px; height: 32px;}
     .ms-header__menu{width: 20px; height: 20px;}
-    .ms-header__menu__wrapper:hover .ms-header__menu{width: 22px; height: 22px;}
     .ms-menu{top: 54px; height: calc(100Dvh - 54px);}
     
     .ms-advantage{margin-bottom: 50px; width: 100%; background: rgb(255 255 255 / 10%); border-radius: .6rem; padding: 10px; display: flex; justify-content: center;}
@@ -231,4 +229,6 @@ a.ms-contact__text:hover{color: var(--color_s2);}
     .ms-footer__menu__head{margin-bottom: 10px;}
     
     .ms-social__ico{justify-content: center;}
+    
+    .popup-star__ico svg{width: 25px; height: 25px;}
 }

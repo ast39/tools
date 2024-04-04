@@ -132,7 +132,7 @@ table {
 	font-family: 'Montserrat', sans-serif;
 	text-align: center;
 	text-transform: uppercase;
-	border-radius: .6rem;
+	border-radius: 50px;
 	-webkit-transition: all .15s ease 0s;
 		 -o-transition: all .15s ease 0s;
 			transition: all .15s ease 0s;
@@ -517,9 +517,8 @@ input[type='submit']:disabled {
 	transform: scale(1.4);
 }
 
-.color_white {
-	color: #fff !important;
-}
+.color_white {color: #fff !important;}
+.sectionSupTitle.color_white {color: var(--color_s1) !important;}
 
 .color_gray {
 	color: #666 !important;
@@ -692,8 +691,8 @@ input[type='submit']:disabled {
 	   -moz-box-sizing: border-box !important;
 			box-sizing: border-box !important;
 	width: 100%;
-	max-width: 450px;
-	padding: 4rem 5rem 5rem;
+	max-width: 600px;
+	padding: 40px;
 	background-color: #fff;
 }
 
@@ -1437,6 +1436,7 @@ section.services .owl-carousel{left: 0px; width: 100%;}
 	-webkit-background-size: cover;
 			background-size: cover;
 	opacity: .2;
+    -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: gray;
 }
 
 @-webkit-keyframes growUp {
@@ -1692,6 +1692,7 @@ section.services .owl-carousel{left: 0px; width: 100%;}
 			background-size: cover;
 	opacity: .2;
 	z-index: -1;
+    -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: gray;
 }
 
 .serviceBox__bg:after{content: ''; background-image: var(--background-image); position: absolute; width: calc(100% - 20px); height: calc(100% - 20px); top: 10px; left: 10px; background-size: cover; -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: gray; opacity: 0.7; border-radius: .6rem;}
@@ -2108,6 +2109,7 @@ section.services .owl-carousel{left: 0px; width: 100%;}
 			background-size: cover;
 	opacity: .2;
 	z-index: 0;
+    -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: gray;
 }
 
 .testimonials .owl-dot:not(.active) {
@@ -2241,6 +2243,7 @@ section.services .owl-carousel{left: 0px; width: 100%;}
 			background-size: cover;
 	opacity: .25;
 	z-index: 0;
+    -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: gray;
 }
 
 .commentsBlock {
@@ -4986,7 +4989,7 @@ section.services .owl-carousel{left: 0px; width: 100%;}
 	}
 
 	.popupForm {
-		padding: 2.5rem 3rem 3rem;
+		padding: 10px;
 	}
 
 	.popupTitle {

@@ -1,8 +1,8 @@
 :root{
     --color_s0: #293745;
     
-    --color_s1: #c7ddf6;
-    --color_s2: #3CACD7;
+    --color_s1: #FAE348;
+    --color_s2: #009BB7;
     --color_s3: #50c1ec;
     
     --color_s4: #F8FAFB;
@@ -15,18 +15,22 @@
     
     --color_s10: #eff6fc;
     --color_s11: #ffb917;
+    --color_s12: #01b1c9;
+    
+    --color_s13: #2C2924;
 }
 
 body{color: var(--color_s0);}
 .headerContacts__item:after, .siteLogoName:before, .siteLogoName:after, input[type="checkbox"]:checked + span:before{background-color: var(--color_s2);}
+input[type="checkbox"]:checked + span:before{background-color: var(--color_s2);}
 .headerNav{background-color: var(--color_s1);}
 
 
 .btn_dark, .btn_lightColor2:hover{color: #ffffff; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear;}
 .btn_dark:hover, .btn_light, .btn_lightColor1:hover{color: var(--color_s0); -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear;}
 
-.btn_dark{background-color: var(--color_s5); color: var(--color_s4);}
-.btn_dark:hover{background-color: var(--color_s6); color: var(--color_s4);}
+.btn_dark{background-color: var(--color_s2); color: var(--color_s4);}
+.btn_dark:hover{background-color: var(--color_s12); color: var(--color_s4);}
 
 .btn_light{background-color: var(--color_s2); color: #ffffff}
 .btn_light:hover{background-color: var(--color_s3); color: #ffffff}
@@ -37,7 +41,9 @@ body{color: var(--color_s0);}
 
 .headerTop, .headerMenu .sub-menu, .mobilePopupBox{background-color: var(--color_s0);}
 
-.headerTop a:hover, .headerContacts__item:before, .headerMenu .sub-menu .menu-item:hover > a, .headerMenu .sub-menu .current-menu-item > a, .promoForm__text strong, .promoForm__text b, .formCheck_color_light input[type="checkbox"] + span a:hover, .mobileMenu .menu-item a:hover, .mobileMenu .current-menu-item > a, .mobileMenu .item_open > a, .mobileMenu .item_open > a:focus, .mobileMenu .item_open > .subMenuToggle:after, .callBtnMobile a:hover , .numbers__value, .portfolioItem__title a:hover, .articleAnonsBox a:hover, .bigContacts__item i:before, .bigContacts__item a:hover, .mobileContactsList__item a, .breadcrumbs a:hover, .sidePrice a:before, .sideInfoList .menu-item a:hover, .sideInfoList .menu-item b:not(.sideInfoList__link_color_inverse) a:hover, .sideInfoList .current-menu-item a, .postMeta__cats:before, .sideInfoList__link_color_inverse a, .articleMeta__icon:before, .smallContacts__box:before {color: var(--color_s2);}
+.headerTop a:hover, .headerContacts__item:before, .headerMenu .sub-menu .menu-item:hover > a, .headerMenu .sub-menu .current-menu-item > a, .promoForm__text b, .formCheck_color_light input[type="checkbox"] + span a:hover, .mobileMenu .menu-item a:hover, .mobileMenu .current-menu-item > a, .mobileMenu .item_open > a, .mobileMenu .item_open > a:focus, .mobileMenu .item_open > .subMenuToggle:after, .callBtnMobile a:hover , .numbers__value, .portfolioItem__title a:hover, .articleAnonsBox a:hover, .bigContacts__item i:before, .bigContacts__item a:hover, .mobileContactsList__item a, .breadcrumbs a:hover, .sidePrice a:before, .sideInfoList .menu-item a:hover, .sideInfoList .menu-item b:not(.sideInfoList__link_color_inverse) a:hover, .sideInfoList .current-menu-item a, .postMeta__cats:before, .sideInfoList__link_color_inverse a, .articleMeta__icon:before, .smallContacts__box:before {color: var(--color_s2);}
+
+.promoForm__text strong{color: var(--color_s1);}
 
 a, a:focus, input[type="checkbox"] + span a:hover, input[type="checkbox"] + span a:focus:hover, .headerPhoneNumber a:hover, .sectionSupTitle, .postContent ul:not([class]) li:before, .postContent ol:not([class]) li:before, .priceBoxTitle, .testimonialBox__author, .footerSupTitle, .footerMenu > .menu-item > a:hover, .servCatsList__item a:hover, .servCatsList__item_current a, .servCatsList__item_current a:focus, .sidePrice a:hover, .serviceItem__title a:hover, .postNav__all a:hover, .postNav__item a:hover .postNav__link, .sidePopularList__title a:hover, .articleItem__title a:hover, .similarPostsItem__title a:hover, .commentBody__date a:hover, .smallContacts__box a:hover {color: var(--color_s2);}
 
@@ -47,7 +53,7 @@ a, a:focus, input[type="checkbox"] + span a:hover, input[type="checkbox"] + span
 
 .bigContacts__item i, .sideBanner {border-color: var(--color_s2);}
 
-.promoForm {background-color: var(--color_s6);}
+.promoForm {background-color: var(--color_s13);}
 
 .serviceBox__back, .portfolioItem__img:after, .articleAnonsBox, .bottomBar, .sideBanner, .serviceItem__img a:before, .postContent .image:before, .sidePopularList__thumb a:before, .articleItem__thumb a:before, .similarPostsItem__thumb a:before {background-color: var(--color_s6);}
 
