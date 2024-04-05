@@ -1191,7 +1191,7 @@ input[type='submit']:disabled {
 }
 
 section.services .owl-carousel .owl-item img{width: inherit;}
-section.services .owl-carousel, .ms-review__block, .ms-employees__block, .ms-video__wrapper{left: 0px; width: 100%;}
+section.services .owl-carousel, .ms-review__block, .ms-employees__block, .ms-video__wrapper, .ms-photos__wrapper{left: 0px; width: 100%;}
 
 .headerMenu .sub-menu .menu-item > a {
 	display: block;
@@ -2663,8 +2663,8 @@ section.services .owl-carousel, .ms-review__block, .ms-employees__block, .ms-vid
 }
 
 .postContent table {
-	margin-top: 4rem;
-	margin-bottom: 4rem;
+	margin-top: 40px;
+	margin-bottom: 40px;
     border-spacing: 0;
     border-collapse: collapse;
 }
@@ -2685,7 +2685,7 @@ section.services .owl-carousel, .ms-review__block, .ms-employees__block, .ms-vid
 }
 
 .postContent table tr:nth-child(2n+1) td {
-	background-color: #f5f5f5;
+	background-color: var(--color_s4);
 }
 
 .postContent table th:not(:last-child) {
@@ -2816,7 +2816,6 @@ section.services .owl-carousel, .ms-review__block, .ms-employees__block, .ms-vid
     margin: 0px;
     padding: 0px;
     font-size: 25px;
-    padding-bottom: 5px;
 }
 
 .pageTitle:after {
@@ -4627,6 +4626,7 @@ section.services .owl-carousel, .ms-review__block, .ms-employees__block, .ms-vid
 		padding-left: 2rem;
 	}
 
+    .postContent table td, .postContent table th {font: 500 1.2rem/1.5 'Montserrat', sans-serif; padding: 10px;}
 }
 
 @media (max-width: 575px) {
@@ -4929,10 +4929,6 @@ section.services .owl-carousel, .ms-review__block, .ms-employees__block, .ms-vid
 
 	.pageContent {
 		padding-top: 4rem;
-	}
-
-	.pageTitle {
-		margin-bottom: 4rem;
 	}
 
 	.pageTitle:after {
@@ -5258,3 +5254,5 @@ display: block;
         transform: translate(-160px,-23px)
     }
 }
+
+.fancybox-container *{position: static;}

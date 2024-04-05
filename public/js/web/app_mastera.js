@@ -31,6 +31,17 @@ $(function() {
         
         /* функция выборки рейтинга */
         funcStarRate();
+        
+        $('body').on('click', '[data-open_link]', function(){ window.location.href = $(this).data('open_link'); });
+        
+        setTimeout(function(){
+            if($('.owl-item.cloned').find('[data-fancybox]').length > 0){
+                $('.owl-item.cloned').find('[data-fancybox]').each(function(){
+                    let block = $(this);
+                    block.removeAttr('data-fancybox');
+                });
+            }
+        }, 1000);
     });
     
     /* ------------------------- функция выборки рейтинга ------------------------- */

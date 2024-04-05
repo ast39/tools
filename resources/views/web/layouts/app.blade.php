@@ -25,11 +25,11 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/web/owl.theme.default.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/web/app.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/web/color-scheme.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/web/jquery.fancybox.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/web/jivo/widget.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/web/jivo/omnichannelMenu.widget.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/web/jivo/chatcontainer.widget.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/web/app_mastera.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     
     <body>
@@ -67,8 +67,7 @@
         <script type="text/javascript" src="https://mastera-ryadom.ru/wp-includes/js/dist/url.min.js?ver=7c99a9585caad6f2f16c19ecd17a86cd" id="wp-url-js"></script>
         <script type="text/javascript" src="https://mastera-ryadom.ru/wp-includes/js/dist/api-fetch.min.js?ver=25cbf3644d200bdc5cab50e7966b5b03" id="wp-api-fetch-js"></script>
         <script type="text/javascript" src="{{ asset('js/web/index.js?v=' . time()) }}"></script>
-        <script type="text/javascript" src="https://mastera-ryadom.ru/wp-content/plugins/easy-fancybox/js/jquery.fancybox.min.js?ver=1.3.24" id="jquery-fancybox-js"></script>
-        <script type="text/javascript" src="https://mastera-ryadom.ru/wp-content/plugins/easy-fancybox/js/jquery.easing.min.js?ver=1.4.1" id="jquery-easing-js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script type="text/javascript" src="{{ asset('js/web/custom-main-page.min.js?v=' . time()) }}"></script>
         <script type="text/javascript" src="https://mastera-ryadom.ru/wp-includes/js/wp-embed.min.js?ver=5.7.11" id="wp-embed-js"></script>
         <script type="text/javascript" src="{{ asset('/js/jwplayer-7.4.2/jwplayerwithkey_v2.js') }}"></script>
