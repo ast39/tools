@@ -54,6 +54,9 @@
 .ms-menu__list__one__sub__one:hover svg, .ms-menu__list__one__sub__one.active svg{left: 0px;}
 .ms-menu__list__one__sub__one span{padding: 0px 7px; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear;}
 .ms-menu__list__one__sub__one:hover span, .ms-menu__list__one__sub__one.active span{padding-left: 14px; padding-right: 0px;}
+.ms-menu__list__one__sub__one.main{width: calc(100% - 20px) !important; margin: 10px; padding-left: 7px; position: relative; padding-bottom: 9px; font-weight: bold; font-size: 20px;}
+.ms-menu__list__one__sub__one.main:hover:after{left: 10px;}
+.ms-menu__list__one__sub__one.main:after{content: ''; width: 100px; height: 2px; background: var(--color_s2); position: absolute; left: 7px; bottom: 0px; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear;}
 
 .ms-advantage{margin-bottom: 50px;}
 .ms-advantage__ico{display: flex; align-items: center;justify-content: space-between;}
@@ -204,6 +207,8 @@ a.ms-contact__text:hover{color: var(--color_s1);}
     .ms-menu__list__one__sub__one, .ms-menu__list__one__sub.two{min-width: calc(100% - 20px); width: calc(100% - 20px);}
     .ms-menu__list__one__sub__one{margin: 0px; margin-bottom: 10px;}
     .ms-menu__list__one__sub__one:last-child{margin-bottom: 0px;}
+    
+    .ms-menu__list__one__sub__one.main{margin: 0px; padding-left: 7px; font-size: 17px; padding-bottom: 5px; margin-bottom: 10px;}
     
     .ms-contact__wrapper{margin: -20px;}
     .ms-contact__one{margin: 20px;  width: calc(100% / 2 - 40px);}

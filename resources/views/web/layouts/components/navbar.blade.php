@@ -54,6 +54,8 @@
                                         <div class="ms-menu__list__one__link sub" data-open_block="{{ 'menu'.$k }}" data-open_block_hide>{{ $punct['title'] }} <svg><use xlink:href="#site-cursor"></use></svg></div>
                                     
                                         <div class="ms-menu__list__one__sub {{ ((count($punct['categories']) > 10)? 'two' : '') }} {{ ((count(Cache::get('menu')->toArray())/2 < $step)? 'right' : '') }}" data-open_block_content="{{ 'menu'.$k }}" data-open_block_content_hide>
+                                            <a href="{{ route('web.category.show', [$punct['slug'] ?? 'home', $cat['slug'] ?? 'home']) }}" class="ms-menu__list__one__sub__one main">{{ $punct['title'] }}</a>
+                                        
                                             @foreach($punct['categories'] as $cat)
                                                 <a href="{{ route('web.category.show', [$punct['slug'] ?? 'home', $cat['slug'] ?? 'home']) }}" class="ms-menu__list__one__sub__one"><svg><use xlink:href="#site-cursor"></use></svg> <span>{{ $cat['title'] }}</span></a>
                                             @endforeach
