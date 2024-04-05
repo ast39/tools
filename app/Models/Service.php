@@ -60,7 +60,7 @@ class Service extends Authenticatable {
     ];
 
     protected $fillable = [
-        'id', 'category_id', 'title', 'slug', 'body', 'price', 'unit', 'from', 'favorite', 'active',
+        'id', 'category_id', 'title', 'slug', 'price', 'unit', 'from', 'favorite', 'active',
         'created_at', 'updated_at',
     ];
 
