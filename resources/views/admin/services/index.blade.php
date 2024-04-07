@@ -26,7 +26,8 @@
                     <th class="text-end">{{ __('Цена') }}</th>
                     <th class="text-start">{{ __('Категория') }}</th>
                     <th class="text-start">{{ __('Сфера') }}</th>
-                    <th class="text-end">{{ __('Видимость') }}</th>
+                    <th class="text-center">{{ __('Видимость') }}</th>
+                    <th class="text-end">{{ __('UD') }}</th>
                 </tr>
                 </thead>
 
@@ -39,6 +40,7 @@
                         <td class="text-end">{{ Helper::getServicePrice($service) }}</td>
                         <td class="text-start">{{ $service->category->title }}</td>
                         <td class="text-start">{{ $service->category->sphere->title }}</td>
+                        <td class="text-center">{{ $service->active > 0 ? 'Активна' : 'Отключена' }}</td>
                         <td class="text-end">
                             <form method="post" action="{{ route('admin.service.destroy', $service->id) }}" class="admin-table__nomargin">
                                 @csrf
@@ -53,7 +55,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="7">
+                        <td colspan="8">
                             <div class="text-center p-2 mb-2 bg-secondary bg-gradient text-white rounded">{{ __('Услуги отсутствуют') }}</div>
                         </td>
                     </tr>

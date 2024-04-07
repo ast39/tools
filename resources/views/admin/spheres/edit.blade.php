@@ -47,3 +47,21 @@
     </div>
 @endsection
 
+@push('js')
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#body'), {
+                fontFamily: {
+                    options: [
+                        'default',
+                        'Ubuntu, Arial, sans-serif',
+                        'Ubuntu Mono, Courier New, Courier, monospace'
+                    ]
+                }
+            })
+            .catch( error => {
+                console.error( error );
+            });
+    </script>
+@endpush

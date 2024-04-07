@@ -23,7 +23,8 @@
                     <th class="text-start">{{ __('Название') }}</th>
                     <th class="text-start">{{ __('Описание раздела') }}</th>
                     <th class="text-start">{{ __('Сфера') }}</th>
-                    <th class="text-end">{{ __('Видимость') }}</th>
+                    <th class="text-center">{{ __('Видимость') }}</th>
+                    <th class="text-end">{{ __('UD') }}</th>
                 </tr>
                 </thead>
 
@@ -34,6 +35,7 @@
                         <td class="text-start"><a class="text-primary" href="{{ route('admin.category.show', $category->id) }}">{{ $category->title }}</a></td>
                         <td class="text-start">{{ Str::limit($category->body, 100, '...') }}</td>
                         <td class="text-start">{{ $category->sphere->title }}</td>
+                        <td class="text-center">{{ $category->active > 0 ? 'Активна' : 'Отключена' }}</td>
                         <td class="text-end">
                             <form method="post" action="{{ route('admin.category.destroy', $category->id) }}" class="admin-table__nomargin">
                                 @csrf
@@ -48,7 +50,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="5">
+                        <td colspan="6">
                             <div class="text-center p-2 mb-2 bg-secondary bg-gradient text-white rounded">{{ __('Категории отсутствуют') }}</div>
                         </td>
                     </tr>

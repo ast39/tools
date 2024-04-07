@@ -15,7 +15,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     @php
-        include_once public_path() . '/images/site_sprite.svg';
+        include_once public_path() . '/images/admin_sprite.svg';
     @endphp
 
     {{-- CSS grubber --}}

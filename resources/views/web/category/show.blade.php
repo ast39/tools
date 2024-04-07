@@ -16,9 +16,7 @@
             <br />
 
             <div class="postContent">
-                @foreach(explode('[NEXT]', $category->body) as $p)
-                    <p>{{ $p }}</p>
-                @endforeach
+                <p>{!! $category->body !!}</p>
             </div>
 
             <div class="postContent">

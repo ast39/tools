@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SphereController;
 use App\Http\Controllers\Admin\HomeController;
@@ -44,6 +45,16 @@ Route::resource('services', ServiceController::class)
         'edit' => 'admin.service.edit',
         'update' => 'admin.service.update',
         'destroy' => 'admin.service.destroy',
+    ]);
+
+# Картинки
+Route::resource('images', ImageController::class)
+    ->names([
+        'index' => 'admin.image.index',
+        'show' => 'admin.image.show',
+        'create' => 'admin.image.create',
+        'store' => 'admin.image.store',
+        'destroy' => 'admin.image.destroy',
     ]);
 
 Auth::routes();

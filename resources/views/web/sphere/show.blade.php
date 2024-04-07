@@ -17,9 +17,7 @@
             <br />
 
             <div class="postContent">
-                @foreach(explode('[NEXT]', $sphere->body) as $p)
-                    <p>{{ $p }}</p>
-                @endforeach
+                <p>{!! $sphere->body !!}</p>
             </div>
 
             <div class="postContent">

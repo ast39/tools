@@ -22,6 +22,9 @@
                     <li class="nav-item">
                         <a class="nav-link {{ stripos(request()->route()->getName(), 'admin.service') !== false ? 'text-white' : '' }}" href="{{ route('admin.service.index') }}">{{ __('Услуги') }}</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ stripos(request()->route()->getName(), 'admin.image') !== false ? 'text-white' : '' }}" href="{{ route('admin.image.index') }}">{{ __('Картинки') }}</a>
+                    </li>
                 @endauth
             </ul>
 
