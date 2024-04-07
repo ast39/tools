@@ -23,6 +23,14 @@
                         <td class="text-start">{{ $category->body }}</a></td>
                     </tr>
                     <tr>
+                        <th class="text-start">{{ __('СЕО Название') }}</th>
+                        <td class="text-end">{{ $category->seo->seo_title ?? $sphere->title }}</a></td>
+                    </tr>
+                    <tr>
+                        <th class="text-start">{{ __('СЕО Описание') }}</th>
+                        <td class="text-start">{{ $category->seo->seo_desc ?? '' }}</a></td>
+                    </tr>
+                    <tr>
                         <th class="text-start">{{ __('Сфера') }}</th>
                         <td class="text-end">{{ $category->sphere->title }}</a></td>
                     </tr>

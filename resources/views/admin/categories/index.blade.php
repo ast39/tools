@@ -33,7 +33,7 @@
                     <tr>
                         <td class="text-center">{{ $loop->iteration }}</td>
                         <td class="text-start"><a class="text-primary" href="{{ route('admin.category.show', $category->id) }}">{{ $category->title }}</a></td>
-                        <td class="text-start">{{ Str::limit($category->body, 100, '...') }}</td>
+                        <td class="text-start">{!! Str::limit($category->body, 100, '...') !!}</td>
                         <td class="text-start">{{ $category->sphere->title }}</td>
                         <td class="text-center">{{ $category->active > 0 ? 'Активна' : 'Отключена' }}</td>
                         <td class="text-end">

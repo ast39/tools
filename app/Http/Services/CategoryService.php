@@ -21,6 +21,8 @@ class CategoryService {
             ->create($data);
 
         $category->seo()->create($data);
+
+        return  $category;
     }
 
     /**
@@ -62,6 +64,8 @@ class CategoryService {
     public function update(int $id, array $data): bool
     {
         $category = $this->getById($id);
+
+        $category->seo()->update(collect($data)->except(['sphere_id', 'title', 'slug', 'body', 'active'])->toArray());
 
         return $category->update($data);
     }
