@@ -40,6 +40,9 @@ class SphereUpdateRequest extends FormRequest
             'slug' => ["string", Rule::unique('spheres', 'slug')->ignore($this->sphere)],
             'body' => ['string'],
             'active' => ['integer', 'in:0,1'],
+            'seo_title' => ['sometimes', 'string'],
+            'seo_desc' => ['sometimes', 'string'],
+            'seo_keys' => ['sometimes', 'string'],
         ];
     }
 }

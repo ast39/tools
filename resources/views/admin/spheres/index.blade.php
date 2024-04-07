@@ -32,7 +32,7 @@
                     <tr>
                         <td class="text-center">{{ $loop->iteration }}</td>
                         <td class="text-start"><a class="text-primary" href="{{ route('admin.sphere.show', $sphere->id) }}">{{ $sphere->title }}</a></td>
-                        <td class="text-start">{{ Str::limit($sphere->body, 100, '...') }}</td>
+                        <td class="text-start">{!! Str::limit($sphere->body, 100, '...') !!}</td>
                         <td class="text-center">{{ $sphere->active > 0 ? 'Активна' : 'Отключена' }}</td>
                         <td class="text-end">
                             <form method="post" action="{{ route('admin.sphere.destroy', $sphere->id) }}" class="admin-table__nomargin">

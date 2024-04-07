@@ -17,8 +17,10 @@ class CategoryService {
      */
     public function create(array $data): Model
     {
-        return Category::query()
+        $category =  Category::query()
             ->create($data);
+
+        $category->seo()->create($data);
     }
 
     /**

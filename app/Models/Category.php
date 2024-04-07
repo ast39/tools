@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Http\Traits\Filterable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Str;
 
@@ -24,6 +25,11 @@ class Category extends Authenticatable {
 
     public    $timestamps    = true;
 
+
+    public function seo(): MorphOne
+    {
+        return $this->morphOne(Seo::class, 'seoable');
+    }
 
     /**
      * @return BelongsTo

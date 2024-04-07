@@ -22,6 +22,14 @@
                         <td class="text-start">{{ $sphere->body }}</a></td>
                     </tr>
                     <tr>
+                        <th class="text-start">{{ __('СЕО Название') }}</th>
+                        <td class="text-end">{{ $sphere->seo->seo_title ?? $sphere->title }}</a></td>
+                    </tr>
+                    <tr>
+                        <th class="text-start">{{ __('СЕО Описание') }}</th>
+                        <td class="text-start">{{ $sphere->seo->seo_desc ?? '' }}</a></td>
+                    </tr>
+                    <tr>
                         <th class="text-start">{{ __('Статус') }}</th>
                         <td class="text-end">{{ __('sphere_status_' . $sphere->active) }}</td>
                     </tr>

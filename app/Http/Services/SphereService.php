@@ -9,18 +9,6 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class SphereService {
 
     /**
-     * Добавить сферу
-     *
-     * @param array $data
-     * @return Model
-     */
-    public function create(array $data): Model
-    {
-        return Sphere::query()
-            ->create($data);
-    }
-
-    /**
      * Одна сфера по ID
      *
      * @param int $id
@@ -49,6 +37,22 @@ class SphereService {
     }
 
     /**
+     * Добавить сферу
+     *
+     * @param array $data
+     * @return Model
+     */
+    public function create(array $data): Model
+    {
+        $sphere = Sphere::query()
+            ->create($data);
+
+        $sphere->seo()->create($data);
+
+        return $sphere;
+    }
+
+    /**
      * Обновление сферы
      *
      * @param int $id
@@ -58,6 +62,8 @@ class SphereService {
     public function update(int $id, array $data): bool
     {
         $sphere = $this->getById($id);
+
+        $sphere->seo()->update(collect($data)->except(['title', 'slug', 'body', 'active'])->toArray());
 
         return $sphere->update($data);
     }

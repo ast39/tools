@@ -36,6 +36,25 @@
                     @enderror
                 </div>
 
+                <hr />
+
+                <div class="mt-3 alert alert-primary" role="alert">СЕО</div>
+
+                <div class="mb-3">
+                    <label for="seo_title" class="form-label required">{{ __('Заголовок для СЕО') }}</label>
+                    <input type="text" class="form-control" id="seo_title" name="seo_title" value="{{ $sphere->seo->seo_title ?? $sphere->title }}" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="seo_desc" class="form-label">{{ __('Описание для СЕО') }}</label>
+                    <textarea  cols="10" rows="5" class="form-control" id="seo_desc" name="seo_desc">{{ $sphere->seo->seo_desc ?? '' }}</textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="seo_keys" class="form-label">{{ __('Ключевые слова для СЕО') }}</label>
+                    <textarea  cols="10" rows="5" class="form-control" id="seo_keys" name="seo_keys">{{ $sphere->seo->seo_keys ?? '' }}</textarea>
+                </div>
+
                 <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                     <a href="{{ route('admin.sphere.index') }}" class="btn btn-secondary me-1 rounded">{{ __('Назад') }}</a>
                     <button type="submit" class="btn btn-primary rounded">{{ __('Сохранить') }}</button>
