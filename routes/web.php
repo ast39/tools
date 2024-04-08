@@ -27,3 +27,5 @@ Route::get('advantages', [AdvantagesController::class, 'index'])->name('web.adva
 
 # Раздел контактов
 Route::get('contacts', [ContactsController::class, 'index'])->name('web.contacts.index');
+
+\Illuminate\Support\Facades\URL::forceScheme('https');
