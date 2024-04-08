@@ -23,7 +23,7 @@ class Helper {
             . 'р.'
             . ($unit > 1 ? ' за ' . __('unit_' . $unit) : '');
     }
-    
+
     /**
      * Description - обрезка строки до описания
      *
@@ -37,24 +37,24 @@ class Helper {
         if (mb_strlen($text) < $minLength) {
             return strip_tags($text);
         }
-        
+
         $return = '';
-        
+
         foreach($words as $k => $v){
             $return = implode(' ', [$return, $v]);
-            
+
             if(mb_strlen($return) >= $minLength && preg_match('~[\.\?\!]~', $v)){
                 break;
             }
         }
-        
+
         if($return == ''){
             return strip_tags($text);
         }
 
         return strip_tags($return);
 	}
-    
+
      /**
      * getMinSum - получить минимульную услугу услуги
      *
@@ -64,5 +64,27 @@ class Helper {
         $min_sum = 0;
 
         return $min_sum;
+    }
+
+    public static function parseTextToImages(string $text): string
+    {
+        preg_match_all('`IMG:(.*?):IMG`si', $text, $matches);
+
+        if (count($matches ?: []) == 0) {
+            return $text;
+        }
+
+        foreach ($matches[0] as $key => $match) {
+            $text = str_ireplace($match, self::exportImage($matches[1][$key]), $text);
+        }
+
+        return $text;
+    }
+
+    public static function exportImage(string $image): string
+    {
+        ob_start(); ?>
+            <img class="img-thumbnail" src="<?= asset('/storage/' . $image) ?>"  alt="Изображение не прогрузилось" />
+        <?php return ob_get_clean();
     }
 }

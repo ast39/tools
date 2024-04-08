@@ -63,7 +63,8 @@ class SphereService {
     {
         $sphere = $this->getById($id);
 
-        $sphere->seo()->update(collect($data)->except(['title', 'slug', 'body', 'active'])->toArray());
+        $sphere->seo()->delete();
+        $sphere->seo()->create($data);
 
         return $sphere->update($data);
     }

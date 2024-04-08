@@ -1,6 +1,6 @@
 @php
 
-    @endphp
+@endphp
 
 @extends('web.layouts.app')
 

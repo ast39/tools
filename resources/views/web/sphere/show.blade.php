@@ -1,5 +1,5 @@
 @php
-
+    use App\Http\Libs\Helper;
 @endphp
 
 @extends('web.layouts.app')
@@ -16,8 +16,8 @@
 
             <br />
 
-            <div class="postContent">
-                <p>{!! $sphere->body !!}</p>
+            <div class="postContent float-start">
+                <p>{!! Helper::parseTextToImages($sphere->body) !!}</p>
             </div>
 
             <div class="postContent">
