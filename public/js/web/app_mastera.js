@@ -2,6 +2,9 @@ $(function() {
     let player_list = {};
     
     $(document).ready(function(){
+        /* Функция обработки форм */
+        funcForm();
+        
         /* Функция открытия блока */
         funcOpenBlock();
         
@@ -44,6 +47,74 @@ $(function() {
         }, 1000);
     });
     
+    /* ------------------------- Функция обработки форм ------------------------- */
+    function funcForm(){
+        $('body').on('click', '[href="#popupOrder"]', function(){
+            $('[data-form_modal="order"]').find('input[name="type_id"]').val($(this).data('type_id'));
+        });
+        
+        $('body').on('submit', '[data-form]', function() {
+            let form = $(this),
+                form_data = collectFormData(form);
+                form_btn = form.find('[type="submit"]'),
+                form_color_load = (typeof form.attr('data-color_load') !== 'undefined') ? form.data('color_load') : '',
+                form_alert = form.find('[data-alert]');
+            
+            form_alert.addClass('hide').removeClass('success').html('');
+            
+            $.ajax({
+                type: form.data('type'),
+                url: form.data('action'),
+                data: form_data,
+                dataType: "json",
+                contentType: false,
+                processData:false,
+                beforeSend: function(){
+                    form_btn.addClass('loadblock ' + form_color_load + ' s50');
+                },
+                success:function(msg) {
+                    if(msg.error){
+                        form_alert.removeClass('hide').html(msg.error);
+                    } else {
+                        form_alert.addClass('success').removeClass('hide').html(msg.success);
+                    }
+
+                    form_btn.removeClass('loadblock ' + form_color_load + ' s50');
+                },
+                error:function(msg) {
+                    form_alert.removeClass('hide').html(msg.error);
+                    form_btn.removeClass('loadblock ' + form_color_load + ' s50');
+                }
+            });
+            
+            return false;
+        });
+        
+        /* сбор данных формы */
+        function collectFormData(form){
+            let result = new FormData();
+
+            form.find('input[name], textarea[name], select[name]').each(function(){
+                let block = $(this),
+                    type = this.tagName.toLowerCase(),
+                    name = block.attr('name'),
+                    text = '';
+
+                if (type == 'input' && block.attr('type') == 'file'){
+                    result.append(name, block.prop('files')[0]);
+                } else if (type == 'input' && $.inArray(block.attr('type'), ['checkbox', 'radio']) !== -1 && block.is(':checked')) {
+                    result.append(name, block.val());
+                } else {
+                    if($.inArray(block.attr('type'), ['checkbox', 'radio']) === -1){
+                        result.append(name, block.val());
+                    }
+                }
+            });
+
+            return result;
+        }
+    }
+
     /* ------------------------- функция выборки рейтинга ------------------------- */
     function funcStarRate(){
         if($('[data-star_content]').length > 0){

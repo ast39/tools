@@ -113,7 +113,7 @@
                 @endforeach
             </div>
             
-            <div class="ms-review__send"><a class="btn btn_big btn_light btn_lightColor2 btn_submit fancybox-inline" href="#popupOrder" target="_self">{{ __('Оставить заявку') }} <span class="btn__blick"></span></a></div>
+            <div class="ms-review__send"><a class="btn btn_big btn_light btn_lightColor2 btn_submit fancybox-inline" href="#popupOrder" data-type_id="0" target="_self">{{ __('Оставить заявку') }} <span class="btn__blick"></span></a></div>
         </div>
     </div>
 </section>

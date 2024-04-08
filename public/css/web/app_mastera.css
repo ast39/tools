@@ -188,6 +188,12 @@ a.ms-contact__text:hover{color: var(--color_s1);}
 .ms-photos__wrapper .owl-stage{display: flex; align-self: stretch;}
 .ms-photos__wrapper .owl-item{display: flex; align-self: stretch;}
 
+.form-alert{background: #f17b74; margin-bottom: 20px; padding: 10px 2rem; font-size: 1.5em; border-radius: .6rem; text-align: center; color: #fff;}
+.form-alert.success{background: #479147}
+.popup-content{max-width: 800px; margin: 0 auto;}
+
+.hide{display: none;}
+
 @media screen and (max-width: 1200px) {
     .ms-advantageb__one{width: calc(100% / 2 - 20px);}
 }

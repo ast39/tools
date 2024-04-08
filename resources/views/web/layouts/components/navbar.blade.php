@@ -10,7 +10,7 @@
                 <div class="ms-header__contact">
                     <div class="ms-header__contact__one">
                         <div class="ms-header__phone">
-                            <a href="#" class="ms-header__phone__one">
+                            <a href="{{ url('/') }}" class="ms-header__phone__one">
                                 <div class="ms-header__phone__one__social logo"><svg><use xlink:href="#site-logo4"></use></svg></div>
                             </a>
                             
@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="ms-header__contact__one">
-                        <a class="btn btn_dark fancybox-inline" href="#popupOrder" target="_self">Оставить заявку</a>
+                        <a class="btn btn_dark fancybox-inline" href="#popupOrder" data-type_id="0" target="_self">Оставить заявку</a>
                         
                         <div class="ms-header__menu__wrapper" data-open_blockm="mobilemenu" data-open_block_hidem>
                             <svg class="ms-header__menu"><use xlink:href="#site-menu"></use></svg>

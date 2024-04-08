@@ -29,50 +29,43 @@
                             </div>
                         </div>
                         
-                        <div class="promoForm__wrp">
-                            <div role="form" class="wpcf7" id="wpcf7-f370-o1" lang="ru-RU" dir="ltr">
-                                <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-                                
-                                <form action="/#wpcf7-f370-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
-                                    <div class="formContent">
-                                        <div class="promoForm__field">
-                                            <span class="wpcf7-form-control-wrap your-name">
-                                                <input type="text" name="your-name" value="Ваше имя" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required formName" aria-required="true" aria-invalid="false">
-                                            </span>
-                                        </div>
-                                        
-                                        <div class="promoForm__field">
-                                            <span class="wpcf7-form-control-wrap your-phone"><input type="text" name="your-phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required formPhone" aria-required="true" aria-invalid="false" placeholder="Ваш телефон *"></span>
-                                        </div>
-                                        
-                                        <div class="promoForm__field formCheck_color_light">
-                                            <span class="wpcf7-form-control-wrap accept">
-                                                <span class="wpcf7-form-control wpcf7-acceptance">
-                                                    <span class="wpcf7-list-item">
-                                                        <label><input type="checkbox" name="accept" value="1" aria-invalid="false" checked="checked"><span class="wpcf7-list-item-label">Согласен с условиями <a href="/privacy-policy">Пользовательского соглашения</a></span></label>
-                                                    </span>
+                        <div class="promoForm__wrp wpcf7" role="form" class="wpcf7">
+                            <form data-form="order" data-action="#" data-type="post" data-color_load="w">
+                                <input type="hidden" name="type_id" value="0">
+                            
+                                <div class="formContent">
+                                    <div class="promoForm__field">
+                                        <span class="wpcf7-form-control-wrap your-name">
+                                            <input type="text" name="name" placeholder="Ваше имя" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required formName" aria-required="true" aria-invalid="false" required>
+                                        </span>
+                                    </div>
+                                    
+                                    <div class="promoForm__field">
+                                        <span class="wpcf7-form-control-wrap your-phone">
+                                            <input type="text" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required formPhone" aria-required="true" aria-invalid="false" placeholder="Ваш телефон *" required>
+                                        </span>
+                                    </div>
+                                    
+                                    <div class="promoForm__field formCheck_color_light">
+                                        <span class="wpcf7-form-control-wrap accept">
+                                            <span class="wpcf7-form-control wpcf7-acceptance">
+                                                <span class="wpcf7-list-item">
+                                                    <label>
+                                                        <input type="checkbox" name="accept" value="1" aria-invalid="false" checked="checked" required>
+                                                        <span class="wpcf7-list-item-label">Согласен с условиями <a href="/privacy-policy">Пользовательского соглашения</a></span>
+                                                    </label>
                                                 </span>
                                             </span>
-                                        </div>
-                                        
-                                        <div class="promoForm__field promoForm__submit_light">
-                                            <button type="submit" value="Отправить" class="btn btn_big btn_light btn_lightColor2 btn_submit">{{ __('Отправить') }} <span class="btn__blick"></span></button>
-                                            
-                                            <span class="ajax-loader hideLoader"></span>
-                                        </div>
+                                        </span>
                                     </div>
                                     
-                                    <div class="formNote formNote_sent hideBlock">
-                                        <div class="formNote__text formNote__text_sent">Ваша заявка была успешно отправлена, мы с Вами свяжемся в ближайшее время!</div>
-                                    </div>
+                                    <div class="form-alert hide" data-alert></div>
                                     
-                                    <div class="formNote formNote_fail hideBlock">
-                                        <div class="formNote__text formNote__text_fail">Ошибка при отправке заявки, попробуйте еще раз или обратитесь к администратору сайта!</div>
+                                    <div class="promoForm__field promoForm__submit promoForm__submit_light">
+                                        <button type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit btn btn_big btn_light btn_lightColor2 btn_submit">{{ __('Отправить') }} <span class="btn__blick"></span></button>
                                     </div>
-                                    
-                                    <div class="wpcf7-response-output" aria-hidden="true"></div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

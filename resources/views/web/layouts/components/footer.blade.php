@@ -4,7 +4,7 @@
         <div class="ms-footer__wrapper">
             <div class="ms-footer__wrapper__one flogo">
                 <div class="ms-footer__logo">
-                    <a href="#"><svg><use xlink:href="#site-logo4"></use></svg></a>
+                    <a href="{{ url('/') }}"><svg><use xlink:href="#site-logo4"></use></svg></a>
                 </div>
                 
                 <div class="ms-footer__desc">{{ __('Центр Бытовых Услуг') }}</div>
@@ -13,13 +13,11 @@
             <div class="ms-footer__wrapper__one fmenu">
                 <div class="ms-footer__menu">
                     <div class="ms-footer__menu__one">
-                        <div class="ms-footer__menu__head">{{ __('Пункт меню') }}</div>
+                        <div class="ms-footer__menu__head">{{ __('Услуги') }}</div>
                         <div class="ms-footer__menu__sub">
-                            <a href="#" class="ms-footer__menu__sub__one">{{ __('Пункт 1') }}</a>
-                            <a href="#" class="ms-footer__menu__sub__one">{{ __('Пункт 2') }}</a>
-                            <a href="#" class="ms-footer__menu__sub__one">{{ __('Пункт 3') }}</a>
-                            <a href="#" class="ms-footer__menu__sub__one">{{ __('Пункт 4') }}</a>
-                            <a href="#" class="ms-footer__menu__sub__one">{{ __('Пункт 5') }}</a>
+                            @foreach(Cache::get('menu')->toArray() as $k => $punct)
+                                <a href="{{ route('web.sphere.show', $punct['slug'] ?? 'home') }}" class="ms-footer__menu__sub__one">{{ $punct['title'] }}</a>
+                            @endforeach
                         </div>
                     </div>
                     

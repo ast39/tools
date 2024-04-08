@@ -23,4 +23,35 @@ class Helper {
             . 'р.'
             . ($unit > 1 ? ' за ' . __('unit_' . $unit) : '');
     }
+    
+    /**
+     * Description - обрезка строки до описания
+     *
+     * @return string
+     */
+    public static function getTrim($text, $minLength = 10){
+        # Разбиваем текст на слова
+        $words = preg_split('/\s+/', $text, -1, PREG_SPLIT_NO_EMPTY);
+
+        # Если длина текста меньше минимальной, возвращаем текст без изменений
+        if (mb_strlen($text) < $minLength) {
+            return strip_tags($text);
+        }
+        
+        $return = '';
+        
+        foreach($words as $k => $v){
+            $return = implode(' ', [$return, $v]);
+            
+            if(mb_strlen($return) >= $minLength && preg_match('~[\.\?\!]~', $v)){
+                break;
+            }
+        }
+        
+        if($return == ''){
+            return strip_tags($text);
+        }
+
+        return strip_tags($return);
+	}
 }

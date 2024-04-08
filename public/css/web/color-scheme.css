@@ -37,15 +37,15 @@ input[type="checkbox"]:checked + span:before{background-color: var(--color_s2);}
 
 .social_dark .social__item a:hover:before, .headerTagline strong, .headerTagline b {color: var(--color_s2);}
 
-.headerTop a, .headerTop a:focus, .headerMenu .sub-menu .menu-item > a, .headerMenu .sub-menu .menu-item > a:focus, input[type="checkbox"] + span:before {color: #fff;}
+.headerTop a, .headerMenu .sub-menu .menu-item > a, input[type="checkbox"] + span:before {color: #fff;}
 
 .headerTop, .headerMenu .sub-menu, .mobilePopupBox{background-color: var(--color_s0);}
 
-.headerTop a:hover, .headerContacts__item:before, .headerMenu .sub-menu .menu-item:hover > a, .headerMenu .sub-menu .current-menu-item > a, .promoForm__text b, .formCheck_color_light input[type="checkbox"] + span a:hover, .mobileMenu .menu-item a:hover, .mobileMenu .current-menu-item > a, .mobileMenu .item_open > a, .mobileMenu .item_open > a:focus, .mobileMenu .item_open > .subMenuToggle:after, .callBtnMobile a:hover , .numbers__value, .portfolioItem__title a:hover, .articleAnonsBox a:hover, .bigContacts__item i:before, .bigContacts__item a:hover, .mobileContactsList__item a, .breadcrumbs a:hover, .sidePrice a:before, .sideInfoList .menu-item a:hover, .sideInfoList .menu-item b:not(.sideInfoList__link_color_inverse) a:hover, .sideInfoList .current-menu-item a, .postMeta__cats:before, .sideInfoList__link_color_inverse a, .articleMeta__icon:before, .smallContacts__box:before {color: var(--color_s2);}
+.headerTop a:hover, .headerContacts__item:before, .headerMenu .sub-menu .menu-item:hover > a, .headerMenu .sub-menu .current-menu-item > a, .promoForm__text b, .formCheck_color_light input[type="checkbox"] + span a:hover, .mobileMenu .menu-item a:hover, .mobileMenu .current-menu-item > a, .mobileMenu .item_open > a, .mobileMenu .item_open > .subMenuToggle:after, .callBtnMobile a:hover , .numbers__value, .portfolioItem__title a:hover, .articleAnonsBox a:hover, .bigContacts__item i:before, .bigContacts__item a:hover, .mobileContactsList__item a, .breadcrumbs a:hover, .sidePrice a:before, .sideInfoList .menu-item a:hover, .sideInfoList .menu-item b:not(.sideInfoList__link_color_inverse) a:hover, .sideInfoList .current-menu-item a, .postMeta__cats:before, .sideInfoList__link_color_inverse a, .articleMeta__icon:before, .smallContacts__box:before {color: var(--color_s2);}
 
 .promoForm__text strong{color: var(--color_s1);}
 
-a, a:focus, input[type="checkbox"] + span a:hover, input[type="checkbox"] + span a:focus:hover, .headerPhoneNumber a:hover, .sectionSupTitle, .postContent ul:not([class]) li:before, .postContent ol:not([class]) li:before, .priceBoxTitle, .testimonialBox__author, .footerSupTitle, .footerMenu > .menu-item > a:hover, .servCatsList__item a:hover, .servCatsList__item_current a, .servCatsList__item_current a:focus, .sidePrice a:hover, .serviceItem__title a:hover, .postNav__all a:hover, .postNav__item a:hover .postNav__link, .sidePopularList__title a:hover, .articleItem__title a:hover, .similarPostsItem__title a:hover, .commentBody__date a:hover, .smallContacts__box a:hover {color: var(--color_s2);}
+a, input[type="checkbox"] + span a:hover, .headerPhoneNumber a:hover, .sectionSupTitle, .postContent ul:not([class]) li:before, .postContent ol:not([class]) li:before, .priceBoxTitle, .testimonialBox__author, .footerSupTitle, .footerMenu > .menu-item > a:hover, .servCatsList__item a:hover, .servCatsList__item_current a, .sidePrice a:hover, .serviceItem__title a:hover, .postNav__all a:hover, .postNav__item a:hover .postNav__link, .sidePopularList__title a:hover, .articleItem__title a:hover, .similarPostsItem__title a:hover, .commentBody__date a:hover, .smallContacts__box a:hover {color: var(--color_s2);}
 
 .sectionTitle:before, .sectionTitle:after, .tabsBox__item a:hover, .tabsBox__item a.active, .tabsBox .ui-tabs-active a, .tabsBoxMobile.open, .tabsBoxMobile:hover, .owl-dot:hover, .owl-dot.active, .pageTitle:after, .sideTitle:after, .mainbarBox__title:after {background-color: var(--color_s2);}
 
@@ -73,7 +73,7 @@ a, a:focus, input[type="checkbox"] + span a:hover, input[type="checkbox"] + span
 .sideInfoBox, .postContent table th {background-color: var(--color_s0);}
 
 .breadcrumbs__content{color: var(--color_s9);}
-.breadcrumbs a, .breadcrumbs a:focus{color: var(--color_s9);}
+.breadcrumbs a{color: var(--color_s9);}
 
 
 
