@@ -54,4 +54,15 @@ class Helper {
 
         return strip_tags($return);
 	}
+    
+     /**
+     * getMinSum - получить минимульную услугу услуги
+     *
+     * @return string
+     */
+    public static function getMinSum($categories, $id = 0){
+        $min_sum = 0;
+
+        return $min_sum;
+    }
 }
