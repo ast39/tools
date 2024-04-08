@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\SphereController;
 use App\Http\Controllers\Admin\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 
 Route::get('/', HomeController::class)->name('admin.home');
@@ -58,3 +59,7 @@ Route::resource('images', ImageController::class)
     ]);
 
 Auth::routes();
+
+if (app()->isProduction()) {
+    URL::forceScheme('https');
+}

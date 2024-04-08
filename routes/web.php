@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\ReviewsController;
 use App\Http\Controllers\Web\ServicesController;
 use App\Http\Controllers\Web\SphereController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 
 # Страница по дефолту - Main page
@@ -28,4 +29,6 @@ Route::get('advantages', [AdvantagesController::class, 'index'])->name('web.adva
 # Раздел контактов
 Route::get('contacts', [ContactsController::class, 'index'])->name('web.contacts.index');
 
-\Illuminate\Support\Facades\URL::forceScheme('https');
+if (app()->isProduction()) {
+    URL::forceScheme('https');
+}
