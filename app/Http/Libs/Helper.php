@@ -56,7 +56,7 @@ class Helper {
 	}
 
      /**
-     * getMinSum - получить минимульную услугу услуги
+     * getMinSum - получить минимальную услугу услуги
      *
      * @return string
      */

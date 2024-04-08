@@ -17,9 +17,9 @@ class CategoryController extends Controller {
     use Dictionarable;
 
 
-    public function show(string $slug): View
+    public function show(string $sphere, string $category): View
     {
-        $id = $this->getIdBySlug(new Category(), $slug);
+        $id = $this->getCategoryIdBySlug($category);
 
         $category = Category::with('services')
             ->findOrFail($id);

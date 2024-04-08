@@ -20,7 +20,7 @@ class SphereController extends Controller {
 
     public function show(string $slug): View
     {
-        $id = $this->getIdBySlug(new Sphere(), $slug);
+        $id = $this->getSphereIdBySlug($slug);
 
         $sphere = Sphere::with('categories')->findOrFail($id);
 

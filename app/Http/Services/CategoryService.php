@@ -10,22 +10,6 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class CategoryService {
 
     /**
-     * Добавить категорию
-     *
-     * @param array $data
-     * @return Model
-     */
-    public function create(array $data): Model
-    {
-        $category =  Category::query()
-            ->create($data);
-
-        $category->seo()->create($data);
-
-        return  $category;
-    }
-
-    /**
      * Одна категория по ID
      *
      * @param int $id
@@ -55,6 +39,22 @@ class CategoryService {
     }
 
     /**
+     * Добавить категорию
+     *
+     * @param array $data
+     * @return Model
+     */
+    public function create(array $data): Model
+    {
+        $category =  Category::query()
+            ->create($data);
+
+        $category->seo()->create($data);
+
+        return  $category;
+    }
+
+    /**
      * Обновление категории
      *
      * @param int $id
@@ -65,7 +65,8 @@ class CategoryService {
     {
         $category = $this->getById($id);
 
-        $category->seo()->update(collect($data)->except(['sphere_id', 'title', 'slug', 'body', 'active'])->toArray());
+        $category->seo()->delete();
+        $category->seo()->create($data);
 
         return $category->update($data);
     }

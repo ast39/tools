@@ -37,15 +37,28 @@ trait Dictionarable {
     }
 
     /**
-     * ID сущности по слагу
+     * ID сферы по слагу
      *
-     * @param Model $model
      * @param string $slug
      * @return int|null
      */
-    private function getIdBySlug(Model $model, string $slug):? int
+    private function getSphereIdBySlug(string $slug):? int
     {
-        return $model::where('slug', $slug)
+        return Sphere::where('slug', $slug)
+            ->select('id')
+            ->first()
+            ?->id;
+    }
+
+    /**
+     * ID категории по слагу
+     *
+     * @param string $slug
+     * @return int|null
+     */
+    private function getCategoryIdBySlug(string $slug):? int
+    {
+        return Category::where('slug', $slug)
             ->select('id')
             ->first()
             ?->id;
