@@ -36,7 +36,7 @@
                             </tr>
                         @empty
                             <tr style="height: 24px;">
-                                <td colspan="2" style="height: 24px; text-align: center">{{ __('Нет нихуя') }}</td>
+                                <td colspan="2" style="height: 24px; text-align: center">{{ __('В данном разделе пока нет категорий') }}</td>
                             </tr>
                         @endforelse
                     </tbody>

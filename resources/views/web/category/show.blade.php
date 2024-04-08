@@ -31,11 +31,11 @@
                         @forelse($category->services as $service)
                             <tr style="height: 24px;">
                                 <td style="width: 57.4002%; height: 24px;">{{ $service->title }}</td>
-                                <td style="width: 121.782%; height: 24px; text-align: right;">{{ $service->price }}</td>
+                                <td style="width: 121.782%; height: 24px; text-align: right;">{{ $service->price }} {{ __('р.') }}</td>
                             </tr>
                         @empty
                             <tr style="height: 24px;">
-                                <td colspan="2" style="height: 24px; text-align: center">{{ __('Нет нихуя') }}</td>
+                                <td colspan="2" style="height: 24px; text-align: center">{{ __('В данном разделе пока нет услуг') }}</td>
                             </tr>
                         @endforelse
                     </tbody>
